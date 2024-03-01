@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <title>오브젝트</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #content-info{
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #author-info{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        #title{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            padding-top: 10px;
+            margin-bottom: 2px;
+            font-size: 34px;
+            color: #505050;
+        }
+        .text{
+            white-space:nowrap;
+            text-overflow: ellipsis;
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 2px;
+            font-size: 20px;
+            color: #8c8c8c;
+        }
+        #navBar{
+            width: auto;
+            height: auto;
+            position: fixed;
+            right:0;
+            bottom: 0;
+            background-color: #f0f3f4;
+            overflow-y: auto;
+            text-align: center;
+        }
+        #svg-container{
+            width: 100%;
+            overflow-x: scroll;
+            min-width: 0px;
+            margin: 0 10px;
+            overflow: visible;
+            position: relative;
+        }
+        #nav-thumbs{
+            overflow-y: scroll;
+            padding: 0 5px;
+        }
+        .nav-thumb{
+            position: relative;
+            margin: 10px auto;
+        }
+        .nav-thumb >p{
+            text-align: center;
+            font-size: 12px;
+            margin: 4px 0 0 0;
+        }
+        .nav-thumb >div{
+            position: relative;
+            display: inline-block;
+            border: 1px solid #c6cfd5;
+        }
+        .nav-thumb img{
+            display: block;
+        }
+        #main-content{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #d0cfd8;
+            display: flex;
+            height: auto;
+            flex-flow: row wrap;
+            text-align:center;
+        }
+        #svg-container >svg{
+            overflow: visible;
+            display: block;
+            margin:5px auto;
+            margin-bottom: 5px;
+        }
+        #copyright{
+            bottom: 0;
+            left: 50%;
+            margin: 5px auto;
+            font-size: 16px;
+            color: #515151;
+        }
+        #copyright >a{
+            text-decoration: none;
+            color: #77C;
+        }
+        .number{
+            position: absolute;
+            top:0;
+            left:0;
+            border-top:22px solid #08a1ef;
+            border-right: 22px solid transparent;
+        }
+        .pagenum{
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            top: -23px;
+            left: 2px;
+        }
+            #navBar::-webkit-scrollbar{
+            width: 8px;
+            background-color: #f5f5f5;
+        }
+            #navBar::-webkit-scrollbar-track{
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+            #navBar::-webkit-scrollbar-thumb{
+            border-radius: 8px;
+            -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3);
+            background-color: #6b6b70;
+        }
+        #navBar::-webkit-scrollbar-thumb:hover{
+            background-color: #4a4a4f;
+        }
+</style>
+  </head>
+  <body>
+    <div id="main-area">
+      <div id="content-info">
+        <div id="content-info">
+          <div id="title">오브젝트</div>
+        </div>
+        <div id="author-info">
+          <div id="author-name" class="text">coffee Ilove</div>
+          <div id="share-time" class="text">2024-03-01</div>
+        </div>
+      </div>
+      <div id="main-content">
+        <div id="svg-container"><svg viewBox="0 0 1289 1765" ed:name="1장 객체 설계" ed:hSpacing="30" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" ed:vSpacing="30" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ed="https://www.edrawsoft.com/xml/2017/SVGExtensions/" width="1289" id="page1" preserveAspectRadio="xMinYMin meet" height="1765">
+    <style type="text/css"><![CDATA[
+g[ed\:togtopicid],g[ed\:hyperlink],g[ed\:comment],g[ed\:note] {cursor:pointer;}
+g[id] {-moz-user-select: none;-ms-user-select: none;user-select: none;}
+svg text::selection,svg tspan::selection{background-color: #4285f4;color: #ffffff;fill: #ffffff;}
+.st5 {fill:#000000;font-family:D2Coding;font-size:13pt;font-style:italic}
+.st10 {fill:#82aaff;font-style:normal}
+.st8 {fill:#89ddff;font-style:normal}
+.st6 {fill:#c792ea}
+.st4 {fill:#ebebeb;font-family:D2Coding;font-size:12pt}
+.st3 {fill:#ebebeb;font-family:D2Coding;font-size:14pt}
+.st2 {fill:#ebebeb;font-family:D2Coding;font-size:16pt;font-weight:bold}
+.st9 {fill:#eeffff;font-style:normal}
+.st11 {fill:#f78c6c;font-style:normal}
+.st7 {fill:#ffcb6b;font-style:normal}
+.st1 {fill:#ffffff;font-family:D2Coding;font-size:18pt;font-weight:bold}
+]]></style>
+    <defs/>
+    <rect fill="#191919" x="0" width="1289" y="0" height="1765"/>
+    <path stroke="#f2c94c" ed:tosuperid="212" d="M37.6,392.4L69.1,392.4L69.1,-386.4C69.1,-389.7,71.7,-392.4,75.1,-392.4L100.6,-392.4" fill="none" ed:parentid="211" stroke-linecap="round" id="116" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,260.68,526.43)"/>
+    <path stroke="#f2994a" ed:tosuperid="213" d="M37.6,222.8L69.1,222.8L69.1,-216.8C69.1,-220.1,71.7,-222.8,75.1,-222.8L100.6,-222.8" fill="none" ed:parentid="211" stroke-linecap="round" id="117" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,260.68,696.02)"/>
+    <path stroke="#f2994a" ed:tosuperid="214" d="M-13.5,35L0,35L0,-29C0,-32.3,2.7,-35,6,-35L13.5,-35" fill="none" ed:parentid="213" stroke-linecap="round" id="118" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,591.74,438.16)"/>
+    <path stroke="#f2994a" ed:tosuperid="215" d="M0,-35L0,29C0,32.3,2.7,35,6,35L13.5,35" fill="none" ed:parentid="213" stroke-linecap="round" id="119" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,591.74,508.22)"/>
+    <path stroke="#eb5757" ed:tosuperid="216" d="M37.6,-159L69.1,-159L69.1,153C69.1,156.3,71.7,159,75.1,159L100.6,159" fill="none" ed:parentid="211" stroke-linecap="round" id="120" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,260.68,1077.85)"/>
+    <path stroke="#eb5757" ed:tosuperid="217" d="M-13.5,176.6L0,176.6L0,-170.6C0,-173.9,2.7,-176.6,6,-176.6L13.5,-176.6" fill="none" ed:parentid="216" stroke-linecap="round" id="121" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1060.24)"/>
+    <path stroke="#eb5757" ed:tosuperid="218" d="M0,67.8L0,-61.8C0,-65.1,2.7,-67.8,6,-67.8L13.5,-67.8" fill="none" ed:parentid="216" stroke-linecap="round" id="122" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1169.09)"/>
+    <path stroke="#eb5757" ed:tosuperid="219" d="M0,30.9L0,-24.9C0,-28.2,2.7,-30.9,6,-30.9L13.5,-30.9" fill="none" ed:parentid="216" stroke-linecap="round" id="123" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1205.97)"/>
+    <path stroke="#eb5757" ed:tosuperid="220" d="M0,-6L0,-0C0,3.3,2.7,6,6,6L13.5,6" fill="none" ed:parentid="216" stroke-linecap="round" id="124" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1242.84)"/>
+    <path stroke="#eb5757" ed:tosuperid="221" d="M0,-42.9L0,36.9C0,40.2,2.7,42.9,6,42.9L13.5,42.9" fill="none" ed:parentid="216" stroke-linecap="round" id="125" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1279.72)"/>
+    <path stroke="#eb5757" ed:tosuperid="222" d="M0,-77.9L0,71.9C0,75.2,2.7,77.9,6,77.9L13.5,77.9" fill="none" ed:parentid="216" stroke-linecap="round" id="126" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1314.75)"/>
+    <path stroke="#eb5757" ed:tosuperid="223" d="M0,-142.4L0,136.4C0,139.7,2.7,142.4,6,142.4L13.5,142.4" fill="none" ed:parentid="216" stroke-linecap="round" id="127" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1379.28)"/>
+    <path stroke="#eb5757" ed:tosuperid="224" d="M0,-176.6L0,170.6C0,173.9,2.7,176.6,6,176.6L13.5,176.6" fill="none" ed:parentid="216" stroke-linecap="round" id="128" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1413.47)"/>
+    <path stroke="#2f80ed" ed:tosuperid="225" d="M37.6,-392.4L69.1,-392.4L69.1,386.4C69.1,389.7,71.7,392.4,75.1,392.4L100.6,392.4" fill="none" ed:parentid="211" stroke-linecap="round" id="129" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,260.68,1311.28)"/>
+    <path stroke="#2f80ed" ed:tosuperid="226" d="M-13.5,12.1L0,12.1L0,-6.1C0,-9.4,2.7,-12.1,6,-12.1L13.5,-12.1" fill="none" ed:parentid="225" stroke-linecap="round" id="130" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1691.65)"/>
+    <path stroke="#2f80ed" ed:tosuperid="227" d="M0,-12.1L0,6.1C0,9.4,2.7,12.1,6,12.1L13.5,12.1" fill="none" ed:parentid="225" stroke-linecap="round" id="131" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,571.74,1715.77)"/>
+    <path stroke="#f2c94c" ed:tosuperid="228" d="M-13.5,50.3L0,50.3L0,-44.3C0,-47.6,2.7,-50.3,6,-50.3L13.5,-50.3" fill="none" ed:parentid="212" stroke-linecap="round" id="132" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,83.75)"/>
+    <path stroke="#f2c94c" ed:tosuperid="229" d="M0,33.5L0,-27.5C0,-30.8,2.7,-33.5,6,-33.5L13.5,-33.5" fill="none" ed:parentid="212" stroke-linecap="round" id="133" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,100.5)"/>
+    <path stroke="#f2c94c" ed:tosuperid="230" d="M0,16.8L0,-10.8C0,-14.1,2.7,-16.8,6,-16.8L13.5,-16.8" fill="none" ed:parentid="212" stroke-linecap="round" id="134" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,117.25)"/>
+    <path stroke="#f2c94c" ed:tosuperid="231" d="M0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="212" stroke-linecap="round" id="135" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,134)"/>
+    <path stroke="#f2c94c" ed:tosuperid="233" d="M0,-16.8L0,10.8C0,14.1,2.7,16.8,6,16.8L13.5,16.8" fill="none" ed:parentid="212" stroke-linecap="round" id="136" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,150.75)"/>
+    <path stroke="#f2c94c" ed:tosuperid="235" d="M0,-33.5L0,27.5C0,30.8,2.7,33.5,6,33.5L13.5,33.5" fill="none" ed:parentid="212" stroke-linecap="round" id="137" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,167.5)"/>
+    <path stroke="#f2c94c" ed:tosuperid="237" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="228" stroke-linecap="round" id="138" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,888.74,33.5)"/>
+    <path stroke="#f2c94c" ed:tosuperid="238" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="229" stroke-linecap="round" id="139" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,852.74,67)"/>
+    <path stroke="#f2c94c" ed:tosuperid="239" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="230" stroke-linecap="round" id="140" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,825.74,100.5)"/>
+    <path stroke="#f2c94c" ed:tosuperid="232" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="231" stroke-linecap="round" id="141" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,870.74,134)"/>
+    <path stroke="#f2c94c" ed:tosuperid="236" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="235" stroke-linecap="round" id="142" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,906.74,201)"/>
+    <path stroke="#f2c94c" ed:tosuperid="234" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="233" stroke-linecap="round" id="143" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,906.74,167.5)"/>
+    <path stroke="#f2c94c" ed:tosuperid="240" d="M0,-50.3L0,44.3C0,47.6,2.7,50.3,6,50.3L13.5,50.3" fill="none" ed:parentid="212" stroke-linecap="round" id="144" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,751.74,184.25)"/>
+    <path stroke="#f2c94c" ed:tosuperid="241" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="240" stroke-linecap="round" id="145" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,861.74,234.5)"/>
+    <path stroke="#f2994a" ed:tosuperid="242" d="M-13.5,25.8L0,25.8L0,-19.8C0,-23.1,2.7,-25.8,6,-25.8L13.5,-25.8" fill="none" ed:parentid="214" stroke-linecap="round" id="146" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,818.74,377.31)"/>
+    <path stroke="#f2994a" ed:tosuperid="243" d="M-13.5,29.5L0,29.5L0,-23.5C0,-26.8,2.7,-29.5,6,-29.5L13.5,-29.5" fill="none" ed:parentid="242" stroke-linecap="round" id="147" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,921.74,322)"/>
+    <path stroke="#f2994a" ed:tosuperid="244" d="M0,14.8L0,-8.8C0,-12.1,2.7,-14.8,6,-14.8L13.5,-14.8" fill="none" ed:parentid="242" stroke-linecap="round" id="148" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,921.74,336.75)"/>
+    <path stroke="#f2994a" ed:tosuperid="245" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="246" stroke-linecap="round" id="149" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,1032.74,351.5)"/>
+    <path stroke="#f2994a" ed:tosuperid="246" d="M0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="242" stroke-linecap="round" id="150" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,921.74,351.5)"/>
+    <path stroke="#f2994a" ed:tosuperid="247" d="M0,-29.5L0,23.5C0,26.8,2.7,29.5,6,29.5L13.5,29.5" fill="none" ed:parentid="242" stroke-linecap="round" id="151" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,921.74,381)"/>
+    <path stroke="#f2994a" ed:tosuperid="248" d="M0,-14.8L0,8.8C0,12.1,2.7,14.8,6,14.8L13.5,14.8" fill="none" ed:parentid="242" stroke-linecap="round" id="152" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,921.74,366.25)"/>
+    <path stroke="#f2994a" ed:tosuperid="249" d="M0,-25.8L0,19.8C0,23.1,2.7,25.8,6,25.8L13.5,25.8" fill="none" ed:parentid="214" stroke-linecap="round" id="153" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,818.74,428.94)"/>
+    <path stroke="#f2994a" ed:tosuperid="251" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="249" stroke-linecap="round" id="154" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,913.74,462.13)"/>
+    <path stroke="#f2994a" ed:tosuperid="250" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="249" stroke-linecap="round" id="155" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,913.74,447.38)"/>
+    <path stroke="#f2994a" ed:tosuperid="252" d="M-13.5,22.1L0,22.1L0,-16.1C0,-19.4,2.7,-22.1,6,-22.1L13.5,-22.1" fill="none" ed:parentid="215" stroke-linecap="round" id="156" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,800.74,521.13)"/>
+    <path stroke="#f2994a" ed:tosuperid="253" d="M0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="215" stroke-linecap="round" id="157" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,800.74,535.88)"/>
+    <path stroke="#f2994a" ed:tosuperid="254" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="253" stroke-linecap="round" id="158" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,895.74,528.5)"/>
+    <path stroke="#f2994a" ed:tosuperid="255" d="M0,-22.1L0,16.1C0,19.4,2.7,22.1,6,22.1L13.5,22.1" fill="none" ed:parentid="215" stroke-linecap="round" id="159" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,800.74,565.38)"/>
+    <path stroke="#f2994a" ed:tosuperid="256" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="215" stroke-linecap="round" id="160" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,800.74,550.63)"/>
+    <path stroke="#f2994a" ed:tosuperid="257" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="256" stroke-linecap="round" id="161" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,895.74,558)"/>
+    <path stroke="#eb5757" ed:tosuperid="258" d="M-13.5,72L0,72L0,-66C0,-69.3,2.7,-72,6,-72L13.5,-72" fill="none" ed:parentid="217" stroke-linecap="round" id="162" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,811.65)"/>
+    <path stroke="#eb5757" ed:tosuperid="259" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="258" stroke-linecap="round" id="163" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,856.74,739.67)"/>
+    <path stroke="#eb5757" ed:tosuperid="260" d="M0,1.8C0,-0.2,2.7,-1.8,6,-1.8L13.5,-1.8" fill="none" ed:parentid="217" stroke-linecap="round" id="164" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,881.85)"/>
+    <path stroke="#eb5757" ed:tosuperid="261" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="260" stroke-linecap="round" id="165" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,896.74,872.71)"/>
+    <path stroke="#eb5757" ed:tosuperid="262" d="M0,-27.7L0,21.7C0,25,2.7,27.7,6,27.7L13.5,27.7" fill="none" ed:parentid="217" stroke-linecap="round" id="166" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,911.35)"/>
+    <path stroke="#eb5757" ed:tosuperid="263" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="262" stroke-linecap="round" id="167" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,856.74,931.71)"/>
+    <path stroke="#eb5757" ed:tosuperid="264" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="262" stroke-linecap="round" id="168" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,856.74,946.46)"/>
+    <path stroke="#eb5757" ed:tosuperid="265" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="260" stroke-linecap="round" id="169" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,896.74,887.46)"/>
+    <path stroke="#eb5757" ed:tosuperid="266" d="M0,-72L0,66C0,69.3,2.7,72,6,72L13.5,72" fill="none" ed:parentid="217" stroke-linecap="round" id="170" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,955.6)"/>
+    <path stroke="#eb5757" ed:tosuperid="267" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="266" stroke-linecap="round" id="171" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,832.74,1020.21)"/>
+    <path stroke="#eb5757" ed:tosuperid="268" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="266" stroke-linecap="round" id="172" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,832.74,1034.96)"/>
+    <path stroke="#eb5757" ed:tosuperid="269" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="267" stroke-linecap="round" id="173" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,959.74,1012.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="270" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="268" stroke-linecap="round" id="174" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,911.74,1042.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="271" d="M0,-49.9L0,43.9C0,47.2,2.7,49.9,6,49.9L13.5,49.9" fill="none" ed:parentid="217" stroke-linecap="round" id="175" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,933.48)"/>
+    <path stroke="#eb5757" ed:tosuperid="272" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="271" stroke-linecap="round" id="176" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,848.74,983.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="273" d="M-13.5,14.8L0,14.8L0,-8.8C0,-12.1,2.7,-14.8,6,-14.8L13.5,-14.8" fill="none" ed:parentid="218" stroke-linecap="round" id="177" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1086.58)"/>
+    <path stroke="#eb5757" ed:tosuperid="274" d="M0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="218" stroke-linecap="round" id="178" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1101.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="275" d="M0,-14.8L0,8.8C0,12.1,2.7,14.8,6,14.8L13.5,14.8" fill="none" ed:parentid="218" stroke-linecap="round" id="179" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1116.08)"/>
+    <path stroke="#eb5757" ed:tosuperid="276" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="273" stroke-linecap="round" id="180" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,890.74,1071.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="277" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="274" stroke-linecap="round" id="181" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,906.74,1101.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="278" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="219" stroke-linecap="round" id="182" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,762.74,1167.71)"/>
+    <path stroke="#eb5757" ed:tosuperid="279" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="278" stroke-linecap="round" id="183" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,905.74,1160.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="280" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="219" stroke-linecap="round" id="184" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,762.74,1182.46)"/>
+    <path stroke="#eb5757" ed:tosuperid="281" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="280" stroke-linecap="round" id="185" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,833.74,1189.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="282" d="M-13.5,14.8L0,14.8L0,-8.8C0,-12.1,2.7,-14.8,6,-14.8L13.5,-14.8" fill="none" ed:parentid="220" stroke-linecap="round" id="186" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,1234.08)"/>
+    <path stroke="#eb5757" ed:tosuperid="283" d="M0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="220" stroke-linecap="round" id="187" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,1248.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="284" d="M0,-14.8L0,8.8C0,12.1,2.7,14.8,6,14.8L13.5,14.8" fill="none" ed:parentid="220" stroke-linecap="round" id="188" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,753.74,1263.58)"/>
+    <path stroke="#eb5757" ed:tosuperid="285" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="221" stroke-linecap="round" id="189" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,789.74,1315.21)"/>
+    <path stroke="#eb5757" ed:tosuperid="286" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="285" stroke-linecap="round" id="190" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,900.74,1307.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="287" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="221" stroke-linecap="round" id="191" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,789.74,1329.96)"/>
+    <path stroke="#eb5757" ed:tosuperid="288" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="287" stroke-linecap="round" id="192" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,900.74,1337.33)"/>
+    <path stroke="#eb5757" ed:tosuperid="289" d="M-13.5,12.9L0,12.9L0,-6.9C0,-10.2,2.7,-12.9,6,-12.9L13.5,-12.9" fill="none" ed:parentid="222" stroke-linecap="round" id="193" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,717.74,1379.74)"/>
+    <path stroke="#eb5757" ed:tosuperid="290" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="289" stroke-linecap="round" id="194" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,860.74,1366.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="291" d="M0,-12.9L0,6.9C0,10.2,2.7,12.9,6,12.9L13.5,12.9" fill="none" ed:parentid="222" stroke-linecap="round" id="195" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,717.74,1405.55)"/>
+    <path stroke="#eb5757" ed:tosuperid="292" d="M-13.5,11.1L0,11.1L0,-5.1C0,-8.4,2.7,-11.1,6,-11.1L13.5,-11.1" fill="none" ed:parentid="291" stroke-linecap="round" id="196" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,876.74,1407.4)"/>
+    <path stroke="#eb5757" ed:tosuperid="293" d="M0,-11.1L0,5.1C0,8.4,2.7,11.1,6,11.1L13.5,11.1" fill="none" ed:parentid="291" stroke-linecap="round" id="197" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,876.74,1429.52)"/>
+    <path stroke="#eb5757" ed:tosuperid="294" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="293" stroke-linecap="round" id="198" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,1091.74,1433.21)"/>
+    <path stroke="#eb5757" ed:tosuperid="295" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="293" stroke-linecap="round" id="199" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,1091.74,1447.96)"/>
+    <path stroke="#eb5757" ed:tosuperid="296" d="M-13.5,11.1L0,11.1L0,-5.1C0,-8.4,2.7,-11.1,6,-11.1L13.5,-11.1" fill="none" ed:parentid="223" stroke-linecap="round" id="200" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1510.65)"/>
+    <path stroke="#eb5757" ed:tosuperid="297" d="M-13.5,7.4L0,7.4L0,-1.4C0,-4.7,2.7,-7.4,6,-7.4L13.5,-7.4" fill="none" ed:parentid="296" stroke-linecap="round" id="201" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,914.74,1492.21)"/>
+    <path stroke="#eb5757" ed:tosuperid="298" d="M0,-7.4L0,1.4C0,4.7,2.7,7.4,6,7.4L13.5,7.4" fill="none" ed:parentid="296" stroke-linecap="round" id="202" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,914.74,1506.96)"/>
+    <path stroke="#eb5757" ed:tosuperid="299" d="M0,-11.1L0,5.1C0,8.4,2.7,11.1,6,11.1L13.5,11.1" fill="none" ed:parentid="223" stroke-linecap="round" id="203" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1532.77)"/>
+    <path stroke="#eb5757" ed:tosuperid="300" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="299" stroke-linecap="round" id="204" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,914.74,1543.83)"/>
+    <path stroke="#eb5757" ed:tosuperid="301" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="224" stroke-linecap="round" id="205" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,771.74,1590.08)"/>
+    <path stroke="#eb5757" ed:tosuperid="302" d="M-13.5,7.9L0,7.9L0,-1.9C0,-5.2,2.7,-7.9,6,-7.9L13.5,-7.9" fill="none" ed:parentid="301" stroke-linecap="round" id="206" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,871.78,1582.21)"/>
+    <path stroke="#eb5757" ed:tosuperid="303" d="M0,-7.9L0,1.9C0,5.2,2.7,7.9,6,7.9L13.5,7.9" fill="none" ed:parentid="301" stroke-linecap="round" id="207" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,871.78,1597.96)"/>
+    <path stroke="#2f80ed" ed:tosuperid="304" d="M-13.5,7.9L0,7.9L0,-1.9C0,-5.2,2.7,-7.9,6,-7.9L13.5,-7.9" fill="none" ed:parentid="226" stroke-linecap="round" id="208" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,780.74,1671.71)"/>
+    <path stroke="#2f80ed" ed:tosuperid="305" d="M0,-7.9L0,1.9C0,5.2,2.7,7.9,6,7.9L13.5,7.9" fill="none" ed:parentid="226" stroke-linecap="round" id="209" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,780.74,1687.46)"/>
+    <path stroke="#2f80ed" ed:tosuperid="306" d="M-13.5,0L0,0C0,0,2.7,0,6,0L13.5,0" fill="none" ed:parentid="227" stroke-linecap="round" id="210" stroke-width="2" stroke-linejoin="round" transform="matrix(1,0,0,1,735.74,1727.83)"/>
+    <g ed:layout="rightmap" ed:width="276.24000000000001" ed:topictype="mainidea" id="211" ed:height="59" transform="matrix(1,0,0,1,22,889.35)">
+        <path stroke="#219653" d="M35.5,0L240.7,0C244.8,0,248.7,-0.2,252.7,0.6C266.1,3.4,276.2,15.2,276.2,29.5C276.2,43.8,266.1,55.6,252.7,58.4C248.7,59.2,244.8,59,240.7,59L35.5,59C31.5,59,27.5,59.2,23.5,58.4C10.1,55.6,0,43.8,0,29.5C0,15.2,10.1,3.4,23.5,0.6C27.5,-0.2,31.5,0,35.5,0z" fill="#219653" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st1">
+            <tspan style="white-space:pre" textLength="204" x="25" y="37.3">▣ 1장: 객체, 설계</tspan>
+        </text>
+        <g ed:hyperlink="[&#xa;    {&#xa;        &quot;desc&quot;: &quot;목차&quot;,&#xa;        &quot;link&quot;: &quot;114&quot;&#xa;    }&#xa;]&#xa;">
+            <use xlink:href="#imghyperlink" transform="translate(236,22)"/>
+        </g>
+    </g>
+    <symbol id="imghyperlink">
+        <image xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEKADAAQAAAABAAAAEAAAAAA0VXHyAAACQElEQVQ4EWNgIAJ8//U/Ze2Jd5/XnXz3/+O3P5HIWliQOdjY777+rkqbea/1338GBhZmRoaVx94te/3pt6koH2sRNvUoYh++/W6PmnT3T8Wyx////fsPBg2rn/4P6bvz583nP5NRFKNzfv7+Xxk18c5vZM0QI/7/BxkSCjQEqKYGXR+cv/7Uu0+RE+/AbX7w6uf/bz+hzgCalDDt3v+DVz9+ZYLrQGf8Z/jPyACEjAwMZ+99Y4iYeIfh2ftfcFVAYTBAMQAY2qlrTr77shYY2m4GAjuBZvxJn/WAIWfeA4a+ODkGZXF2sKbmtc8YPn3/99dMjWcCzCAGYGhX58171PIfGto/fv1jiLMXvV6y+KGGlToP45x0Rbjmiw+//52RojBLlJ8lC2wAMLQ7suY8KpEXYWNui5QBK8yZ+4hh39WP/9sipe+sPv5BmYmJgQkUjV9//GOYmaqwQYiXJRCsEBbalcCogoEzd7/+t6i++j9j9n1YaK89fuvLn8PXP3//9uNvMVgjjFh/8t2nqIl3YXr/3weGNkjzsZufwWKg0D507fN3IIcTpgeZBqVEoK8RQIyfhWFxjjKDigQkwEB+ZGT8z4FQgcpi8jIS7AKFdvWKJ2AZLjYmuOamNc8Yvvz4989YmbuAkZHxO6pWJN77L797Iife/VO1HBEOTWue/g/uvfPn9cc/05GUYjDh0QgyJGfeo0JgwmFiYWJk+Pj9789ZqYrzgVGViaELl8D3X3+SQaF95Mbnb8DYacalDlkcACu8ZG0/oWGoAAAAAElFTkSuQmCC" width="16" height="16"/>
+    </symbol>
+    <g ed:width="377" ed:parentid="211" id="212" ed:height="39" transform="matrix(1,0,0,1,361.24,114.5)">
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="340" x="19" y="27.3">01 티켓 판매 애플리케이션 구현하기</tspan>
+        </text>
+    </g>
+    <g ed:width="217" ed:parentid="211" id="213" ed:height="39" transform="matrix(1,0,0,1,361.24,453.69)">
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="180" x="19" y="27.3">02 무엇이 문제인가</tspan>
+        </text>
+    </g>
+    <g ed:width="200" ed:parentid="213" id="214" ed:height="27" transform="matrix(1,0,0,1,605.24,389.63)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="180" x="10" y="20.3">예상을 빗나가는 코드</tspan>
+        </text>
+    </g>
+    <g ed:width="182" ed:parentid="213" id="215" ed:height="27" transform="matrix(1,0,0,1,605.24,529.75)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="162" x="10" y="20.3">변경에 취약한 코드</tspan>
+        </text>
+    </g>
+    <g ed:width="197" ed:parentid="211" id="216" ed:height="39" transform="matrix(1,0,0,1,361.24,1217.35)">
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="160" x="19" y="27.3">03 설계 개선하기</tspan>
+        </text>
+    </g>
+    <g ed:width="155" ed:parentid="216" id="217" ed:height="27" transform="matrix(1,0,0,1,585.24,870.12)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="135" x="10" y="20.3">자율성을 높이자</tspan>
+        </text>
+    </g>
+    <g ed:width="173" ed:parentid="216" id="218" ed:height="27" transform="matrix(1,0,0,1,585.24,1087.83)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="153" x="10" y="20.3">무엇이 개선됐는가</tspan>
+        </text>
+    </g>
+    <g ed:width="164" ed:parentid="216" id="219" ed:height="27" transform="matrix(1,0,0,1,585.24,1161.58)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="144" x="10" y="20.3">어떻게 한 것인가</tspan>
+        </text>
+    </g>
+    <g ed:width="155" ed:parentid="216" id="220" ed:height="27" transform="matrix(1,0,0,1,585.24,1235.33)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="135" x="10" y="20.3">캡슐화와 응집도</tspan>
+        </text>
+    </g>
+    <g ed:width="191" ed:parentid="216" id="221" ed:height="27" transform="matrix(1,0,0,1,585.24,1309.08)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="171" x="10" y="20.3">절차지향과 객체지향</tspan>
+        </text>
+    </g>
+    <g ed:width="119" ed:parentid="216" id="222" ed:height="27" transform="matrix(1,0,0,1,585.24,1379.15)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="99" x="10" y="20.3">책임의 이동</tspan>
+        </text>
+    </g>
+    <g ed:width="173" ed:parentid="216" id="223" ed:height="27" transform="matrix(1,0,0,1,585.24,1508.21)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="153" x="10" y="20.3">더 개선할 수 있다</tspan>
+        </text>
+    </g>
+    <g ed:width="173" ed:parentid="216" id="224" ed:height="27" transform="matrix(1,0,0,1,585.24,1576.58)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="153" x="10" y="20.3">그래, 거짓말이다!</tspan>
+        </text>
+    </g>
+    <g ed:width="197" ed:parentid="211" id="225" ed:height="39" transform="matrix(1,0,0,1,361.24,1684.21)">
+        <text class="st2">
+            <tspan style="white-space:pre" textLength="160" x="19" y="27.3">04 객체지향 설계</tspan>
+        </text>
+    </g>
+    <g ed:width="182" ed:parentid="225" id="226" ed:height="27" transform="matrix(1,0,0,1,585.24,1666.08)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="162" x="10" y="20.3">설계가 왜 필요한가</tspan>
+        </text>
+    </g>
+    <g ed:width="137" ed:parentid="225" id="227" ed:height="27" transform="matrix(1,0,0,1,585.24,1714.33)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="117" x="10" y="20.3">객체지향 설계</tspan>
+        </text>
+    </g>
+    <g ed:width="110" ed:parentid="212" id="228" ed:height="27" transform="matrix(1,0,0,1,765.24,20)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="90" x="10" y="20.3">invitation</tspan>
+        </text>
+    </g>
+    <g ed:width="74" ed:parentid="212" id="229" ed:height="27" transform="matrix(1,0,0,1,765.24,53.5)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="54" x="10" y="20.3">ticket</tspan>
+        </text>
+    </g>
+    <g ed:width="47" ed:parentid="212" id="230" ed:height="27" transform="matrix(1,0,0,1,765.24,87)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="27" x="10" y="20.3">bag</tspan>
+        </text>
+    </g>
+    <g ed:width="92" ed:parentid="212" id="231" ed:height="27" transform="matrix(1,0,0,1,765.24,120.5)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="72" x="10" y="20.3">audience</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="231" id="232" ed:height="23" transform="matrix(1,0,0,1,884.24,122.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">관람객 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="128" ed:parentid="212" id="233" ed:height="27" transform="matrix(1,0,0,1,765.24,154)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="108" x="10" y="20.3">ticketoffice</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="233" id="234" ed:height="23" transform="matrix(1,0,0,1,920.24,156)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">매표소 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="128" ed:parentid="212" id="235" ed:height="27" transform="matrix(1,0,0,1,765.24,187.5)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="108" x="10" y="20.3">ticketseller</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="235" id="236" ed:height="23" transform="matrix(1,0,0,1,920.24,189.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">판매원 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="228" id="237" ed:height="23" transform="matrix(1,0,0,1,902.24,22)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">초대장 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="108" ed:parentid="229" id="238" ed:height="23" transform="matrix(1,0,0,1,866.24,55.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="10" y="17.3">티켓 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="164" ed:parentid="230" id="239" ed:height="23" transform="matrix(1,0,0,1,839.24,89)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="144" x="10" y="17.3">소지품 보관 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="83" ed:parentid="212" id="240" ed:height="27" transform="matrix(1,0,0,1,765.24,221)">
+        <text class="st3">
+            <tspan style="white-space:pre" textLength="63" x="10" y="20.3">theater</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="240" id="241" ed:height="23" transform="matrix(1,0,0,1,875.24,223)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">소극장 클래스</tspan>
+        </text>
+    </g>
+    <g ed:width="76" ed:parentid="214" id="242" ed:height="23" transform="matrix(1,0,0,1,832.24,340)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="56" x="10" y="17.3">theater</tspan>
+        </text>
+    </g>
+    <g ed:width="100" ed:parentid="242" id="243" ed:height="23" transform="matrix(1,0,0,1,935.24,281)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="80" x="10" y="17.3">invitation</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="242" id="244" ed:height="23" transform="matrix(1,0,0,1,935.24,310.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">ticket</tspan>
+        </text>
+    </g>
+    <g ed:width="44" ed:parentid="246" id="245" ed:height="23" transform="matrix(1,0,0,1,1046.24,340)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="24" x="10" y="17.3">bag</tspan>
+        </text>
+    </g>
+    <g ed:width="84" ed:parentid="242" id="246" ed:height="23" transform="matrix(1,0,0,1,935.24,340)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="64" x="10" y="17.3">audience</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="242" id="247" ed:height="23" transform="matrix(1,0,0,1,935.24,399)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">ticketoffice</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="242" id="248" ed:height="23" transform="matrix(1,0,0,1,935.24,369.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">ticketseller</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="214" id="249" ed:height="23" transform="matrix(1,0,0,1,832.24,443.25)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">문제점</tspan>
+        </text>
+    </g>
+    <g ed:width="212" ed:parentid="249" id="250" ed:height="23" transform="matrix(1,0,0,1,927.24,428.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="192" x="10" y="17.3">theater가 모든 것을 통제</tspan>
+        </text>
+    </g>
+    <g ed:width="148" ed:parentid="249" id="251" ed:height="23" transform="matrix(1,0,0,1,927.24,458)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="128" x="10" y="17.3">모든 내용을 기억</tspan>
+        </text>
+    </g>
+    <g ed:width="132" ed:parentid="215" id="252" ed:height="23" transform="matrix(1,0,0,1,814.24,487.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="112" x="10" y="17.3">가장 큰 문제점</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="215" id="253" ed:height="23" transform="matrix(1,0,0,1,814.24,517)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">의존성</tspan>
+        </text>
+    </g>
+    <g ed:width="332" ed:parentid="253" id="254" ed:height="23" transform="matrix(1,0,0,1,909.24,517)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="312" x="10" y="17.3">객체가 변경되면 다른 객체에 영향을 미침</tspan>
+        </text>
+    </g>
+    <g ed:width="348" ed:parentid="215" id="255" ed:height="23" transform="matrix(1,0,0,1,814.24,576)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="328" x="10" y="17.3">객체의 결합도를 낮추고 변경에 용이한 설계</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="215" id="256" ed:height="23" transform="matrix(1,0,0,1,814.24,546.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">결합도</tspan>
+        </text>
+    </g>
+    <g ed:width="260" ed:parentid="256" id="257" ed:height="23" transform="matrix(1,0,0,1,909.24,546.5)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="240" x="10" y="17.3">객체 사이의 의존성이 과한 경우</tspan>
+        </text>
+    </g>
+    <g ed:width="76" ed:parentid="217" id="258" ed:height="23" transform="matrix(1,0,0,1,767.24,728.17)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="56" x="10" y="17.3">Theater</tspan>
+        </text>
+    </g>
+    <g ed:width="397.33333003520966" ed:parentid="258" id="259" ed:height="215.33333003520966" transform="matrix(1,0,0,1,870.24,632)">
+        <path stroke="#f2994a" d="M4,0L393.3,0C396,0,397.3,1.3,397.3,4L397.3,211.3C397.3,214,396,215.3,393.3,215.3L4,215.3C1.3,215.3,0,214,0,211.3L0,4C0,1.3,1.3,0,4,0z" fill="none" stroke-width="1.33333" stroke-linejoin="round"/>
+        <text class="st5">
+            <tspan style="white-space:pre" textLength="104" x="10" class="st6" y="17.967">public class </tspan>
+            <tspan style="white-space:pre" textLength="64" x="114.467" class="st7">Theater </tspan>
+            <tspan style="white-space:pre" textLength="8" x="178.467" class="st8">{ </tspan>
+            <tspan style="white-space:pre" textLength="32" x="10" class="st8" y="36.967">    </tspan>
+            <tspan style="white-space:pre" textLength="64" x="42.467" class="st6">private </tspan>
+            <tspan style="white-space:pre" textLength="104" x="106.467" class="st7">TicketSeller </tspan>
+            <tspan style="white-space:pre" textLength="96" x="210.467" class="st9">ticketSeller</tspan>
+            <tspan style="white-space:pre" textLength="8" x="306.467" class="st8">; </tspan>
+            <tspan style="white-space:pre" textLength="0" x="10" class="st8" y="55.967"> </tspan>
+            <tspan style="white-space:pre" textLength="32" x="10" class="st8" y="74.967">    </tspan>
+            <tspan style="white-space:pre" textLength="56" x="42.467" class="st6">public </tspan>
+            <tspan style="white-space:pre" textLength="56" x="98.467" class="st10">Theater</tspan>
+            <tspan style="white-space:pre" textLength="8" x="154.467" class="st8">(</tspan>
+            <tspan style="white-space:pre" textLength="104" x="162.467" class="st7">TicketSeller </tspan>
+            <tspan style="white-space:pre" textLength="96" x="266.467" class="st11">ticketSeller</tspan>
+            <tspan style="white-space:pre" textLength="24" x="362.467" class="st8">) { </tspan>
+            <tspan style="white-space:pre" textLength="64" x="10" class="st8" y="93.967">        </tspan>
+            <tspan style="white-space:pre" textLength="32" x="74.467" class="st6">this</tspan>
+            <tspan style="white-space:pre" textLength="8" x="106.467" class="st8">.</tspan>
+            <tspan style="white-space:pre" textLength="104" x="114.467" class="st9">ticketSeller </tspan>
+            <tspan style="white-space:pre" textLength="16" x="218.467" class="st8">= </tspan>
+            <tspan style="white-space:pre" textLength="96" x="234.467" class="st11">ticketSeller</tspan>
+            <tspan style="white-space:pre" textLength="8" x="330.467" class="st8">; </tspan>
+            <tspan style="white-space:pre" textLength="40" x="10" class="st8" y="112.967">    } </tspan>
+            <tspan style="white-space:pre" textLength="0" x="10" class="st8" y="131.967"> </tspan>
+            <tspan style="white-space:pre" textLength="32" x="10" class="st8" y="150.967">    </tspan>
+            <tspan style="white-space:pre" textLength="96" x="42.467" class="st6">public void </tspan>
+            <tspan style="white-space:pre" textLength="40" x="138.467" class="st10">enter</tspan>
+            <tspan style="white-space:pre" textLength="8" x="178.467" class="st8">(</tspan>
+            <tspan style="white-space:pre" textLength="72" x="186.467" class="st7">Audience </tspan>
+            <tspan style="white-space:pre" textLength="64" x="258.467" class="st11">audience</tspan>
+            <tspan style="white-space:pre" textLength="24" x="322.467" class="st8">) { </tspan>
+            <tspan style="white-space:pre" textLength="64" x="10" class="st8" y="169.967">        </tspan>
+            <tspan style="white-space:pre" textLength="96" x="74.467" class="st9">ticketSeller</tspan>
+            <tspan style="white-space:pre" textLength="8" x="170.467" class="st8">.</tspan>
+            <tspan style="white-space:pre" textLength="48" x="178.467" class="st10">sellTo</tspan>
+            <tspan style="white-space:pre" textLength="8" x="226.467" class="st8">(</tspan>
+            <tspan style="white-space:pre" textLength="64" x="234.467" class="st11">audience</tspan>
+            <tspan style="white-space:pre" textLength="16" x="298.467" class="st8">); </tspan>
+            <tspan style="white-space:pre" textLength="40" x="10" class="st8" y="188.967">    } </tspan>
+            <tspan style="white-space:pre" textLength="8" x="10" class="st8" y="207.967">}</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="217" id="260" ed:height="23" transform="matrix(1,0,0,1,767.24,868.58)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">TicketSeller</tspan>
+        </text>
+    </g>
+    <g ed:width="196" ed:parentid="260" id="261" ed:height="23" transform="matrix(1,0,0,1,910.24,853.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="176" x="10" y="17.3">getTicketOffice() 제거</tspan>
+        </text>
+    </g>
+    <g ed:width="76" ed:parentid="217" id="262" ed:height="23" transform="matrix(1,0,0,1,767.24,927.58)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="56" x="10" y="17.3">Theater</tspan>
+        </text>
+    </g>
+    <g ed:width="196" ed:parentid="262" id="263" ed:height="23" transform="matrix(1,0,0,1,870.24,912.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="176" x="10" y="17.3">ticketOffice 접근 불가</tspan>
+        </text>
+    </g>
+    <g ed:width="244" ed:parentid="262" id="264" ed:height="23" transform="matrix(1,0,0,1,870.24,942.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="224" x="10" y="17.3">TicketSeller 인터페이스 의존</tspan>
+        </text>
+    </g>
+    <g ed:width="156" ed:parentid="260" id="265" ed:height="23" transform="matrix(1,0,0,1,910.24,883.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="136" x="10" y="17.3">TicketOffice 구현</tspan>
+        </text>
+    </g>
+    <g ed:width="52" ed:parentid="217" id="266" ed:height="23" transform="matrix(1,0,0,1,767.24,1016.08)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="32" x="10" y="17.3">객체</tspan>
+        </text>
+    </g>
+    <g ed:width="100" ed:parentid="266" id="267" ed:height="23" transform="matrix(1,0,0,1,846.24,1001.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="80" x="10" y="17.3">인터페이스</tspan>
+        </text>
+    </g>
+    <g ed:width="52" ed:parentid="266" id="268" ed:height="23" transform="matrix(1,0,0,1,846.24,1030.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="32" x="10" y="17.3">구현</tspan>
+        </text>
+    </g>
+    <g ed:width="52" ed:parentid="267" id="269" ed:height="23" transform="matrix(1,0,0,1,973.24,1001.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="32" x="10" y="17.3">공개</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="268" id="270" ed:height="23" transform="matrix(1,0,0,1,925.24,1030.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">비공개</tspan>
+        </text>
+    </g>
+    <g ed:width="68" ed:parentid="217" id="271" ed:height="23" transform="matrix(1,0,0,1,767.24,971.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="10" y="17.3">캡슐화</tspan>
+        </text>
+    </g>
+    <g ed:width="188" ed:parentid="271" id="272" ed:height="23" transform="matrix(1,0,0,1,862.24,971.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="168" x="10" y="17.3">객체의 내부 접근 제한</tspan>
+        </text>
+    </g>
+    <g ed:width="92" ed:parentid="218" id="273" ed:height="23" transform="matrix(1,0,0,1,785.24,1060.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="72" x="10" y="17.3">동작 수행</tspan>
+        </text>
+    </g>
+    <g ed:width="108" ed:parentid="218" id="274" ed:height="23" transform="matrix(1,0,0,1,785.24,1089.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="10" y="17.3">변경 용이성</tspan>
+        </text>
+    </g>
+    <g ed:width="84" ed:parentid="218" id="275" ed:height="23" transform="matrix(1,0,0,1,785.24,1119.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="64" x="10" y="17.3">의사소통</tspan>
+        </text>
+    </g>
+    <g ed:width="52" ed:parentid="273" id="276" ed:height="23" transform="matrix(1,0,0,1,904.24,1060.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="32" x="10" y="17.3">만족</tspan>
+        </text>
+    </g>
+    <g ed:width="52" ed:parentid="274" id="277" ed:height="23" transform="matrix(1,0,0,1,920.24,1089.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="32" x="10" y="17.3">만족</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="219" id="278" ed:height="23" transform="matrix(1,0,0,1,776.24,1148.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">TicketOffice</tspan>
+        </text>
+    </g>
+    <g ed:width="212" ed:parentid="278" id="279" ed:height="23" transform="matrix(1,0,0,1,919.24,1148.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="192" x="10" y="17.3">TicketSeller 내부로 이동</tspan>
+        </text>
+    </g>
+    <g ed:width="44" ed:parentid="219" id="280" ed:height="23" transform="matrix(1,0,0,1,776.24,1178.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="24" x="10" y="17.3">Bag</tspan>
+        </text>
+    </g>
+    <g ed:width="180" ed:parentid="280" id="281" ed:height="23" transform="matrix(1,0,0,1,847.24,1178.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="160" x="10" y="17.3">Audience 내부로 이동</tspan>
+        </text>
+    </g>
+    <g ed:width="124" ed:parentid="220" id="282" ed:height="23" transform="matrix(1,0,0,1,767.24,1207.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="104" x="10" y="17.3">객체의 캡슐화</tspan>
+        </text>
+    </g>
+    <g ed:width="172" ed:parentid="220" id="283" ed:height="23" transform="matrix(1,0,0,1,767.24,1237.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="152" x="10" y="17.3">메시지로만 상호작용</tspan>
+        </text>
+    </g>
+    <g ed:width="276" ed:parentid="220" id="284" ed:height="23" transform="matrix(1,0,0,1,767.24,1266.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="256" x="10" y="17.3">객체 스스로 자신의 데이터를 책임</tspan>
+        </text>
+    </g>
+    <g ed:width="84" ed:parentid="221" id="285" ed:height="23" transform="matrix(1,0,0,1,803.24,1296.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="64" x="10" y="17.3">절차지향</tspan>
+        </text>
+    </g>
+    <g ed:width="204" ed:parentid="285" id="286" ed:height="23" transform="matrix(1,0,0,1,914.24,1296.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="184" x="10" y="17.3">데이터 변경 통제 불가능</tspan>
+        </text>
+    </g>
+    <g ed:width="84" ed:parentid="221" id="287" ed:height="23" transform="matrix(1,0,0,1,803.24,1325.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="64" x="10" y="17.3">객체지향</tspan>
+        </text>
+    </g>
+    <g ed:width="276" ed:parentid="287" id="288" ed:height="23" transform="matrix(1,0,0,1,914.24,1325.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="256" x="10" y="17.3">객체에서 데이터 및 프로세스 통제</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="222" id="289" ed:height="23" transform="matrix(1,0,0,1,731.24,1355.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">기존 Theater</tspan>
+        </text>
+    </g>
+    <g ed:width="108" ed:parentid="289" id="290" ed:height="23" transform="matrix(1,0,0,1,874.24,1355.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="10" y="17.3">과도한 책임</tspan>
+        </text>
+    </g>
+    <g ed:width="132" ed:parentid="222" id="291" ed:height="23" transform="matrix(1,0,0,1,731.24,1406.96)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="112" x="10" y="17.3">새로운 Theater</tspan>
+        </text>
+    </g>
+    <g ed:width="204" ed:parentid="291" id="292" ed:height="23" transform="matrix(1,0,0,1,890.24,1384.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="184" x="10" y="17.3">다른 객체에게 책임 위임</tspan>
+        </text>
+    </g>
+    <g ed:width="188" ed:parentid="291" id="293" ed:height="23" transform="matrix(1,0,0,1,890.24,1429.08)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="168" x="10" y="17.3">TicketSeller에게 위임</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="293" id="294" ed:height="23" transform="matrix(1,0,0,1,1105.24,1414.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">TicketOffice</tspan>
+        </text>
+    </g>
+    <g ed:width="84" ed:parentid="293" id="295" ed:height="23" transform="matrix(1,0,0,1,1105.24,1443.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="64" x="10" y="17.3">Audience</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="223" id="296" ed:height="23" transform="matrix(1,0,0,1,785.24,1488.08)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">TicketOffice</tspan>
+        </text>
+    </g>
+    <g ed:width="108" ed:parentid="296" id="297" ed:height="23" transform="matrix(1,0,0,1,928.24,1473.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="10" y="17.3">자율성 증가</tspan>
+        </text>
+    </g>
+    <g ed:width="108" ed:parentid="296" id="298" ed:height="23" transform="matrix(1,0,0,1,928.24,1502.83)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="10" y="17.3">결합도 상승</tspan>
+        </text>
+    </g>
+    <g ed:width="116" ed:parentid="223" id="299" ed:height="23" transform="matrix(1,0,0,1,785.24,1532.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="96" x="10" y="17.3">트레이드오프</tspan>
+        </text>
+    </g>
+    <g ed:width="140" ed:parentid="299" id="300" ed:height="23" transform="matrix(1,0,0,1,928.24,1532.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="120" x="10" y="17.3">결합도를 낮추자</tspan>
+        </text>
+    </g>
+    <g ed:width="73.039999999999992" ed:parentid="224" id="301" ed:height="25" transform="matrix(1,0,0,1,785.24,1577.58)">
+        <path stroke="#eb5757" d="M6.3,0L66.8,0L73,12.5L66.8,25L6.3,25L0,12.5L6.3,0z" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="48" x="12" y="17.3">의인화</tspan>
+        </text>
+    </g>
+    <g ed:width="313.03999999999996" ed:parentid="301" id="302" ed:height="25" transform="matrix(1,0,0,1,885.28,1561.83)">
+        <path stroke="#eb5757" d="M6.3,0L306.8,0L313,12.5L306.8,25L6.3,25L0,12.5L6.3,0z" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="288" x="12" y="17.3">무생물이 아닌 생물로 객체를 바라보라</tspan>
+        </text>
+    </g>
+    <g ed:width="113.03999999999999" ed:parentid="301" id="303" ed:height="25" transform="matrix(1,0,0,1,885.28,1593.33)">
+        <path stroke="#eb5757" d="M6.3,0L106.8,0L113,12.5L106.8,25L6.3,25L0,12.5L6.3,0z" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="88" x="12" y="17.3">상상력 필요</tspan>
+        </text>
+    </g>
+    <g ed:width="97.039999999999992" ed:parentid="226" id="304" ed:height="25" transform="matrix(1,0,0,1,794.24,1651.33)">
+        <path stroke="#2f80ed" d="M6.3,0L90.8,0L97,12.5L90.8,25L6.3,25L0,12.5L6.3,0z" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="72" x="12" y="17.3">기능 구현</tspan>
+        </text>
+    </g>
+    <g ed:width="97.039999999999992" ed:parentid="226" id="305" ed:height="25" transform="matrix(1,0,0,1,794.24,1682.83)">
+        <path stroke="#2f80ed" d="M6.3,0L90.8,0L97,12.5L90.8,25L6.3,25L0,12.5L6.3,0z" fill="none" stroke-width="2" stroke-linejoin="round"/>
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="72" x="12" y="17.3">쉬운 변경</tspan>
+        </text>
+    </g>
+    <g ed:width="436" ed:parentid="227" id="306" ed:height="23" transform="matrix(1,0,0,1,749.24,1716.33)">
+        <text class="st4">
+            <tspan style="white-space:pre" textLength="416" x="10" y="17.3">변경이 쉬운 구조를 가질 수 있는 객체를 자유롭게 상상</tspan>
+        </text>
+    </g>
+</svg>
+</div>
+        <div id="copyright">Created With  <a href="https://www.edrawsoft.com/" target="_blank" title="edrawsoft">EdrawMind</a></div>
+      </div>
+    </div>
+    <script>eval(atob('dmFyIG11YSA9IHdpbmRvdy5uYXZpZ2F0b3IudXNlckFnZW50Ow0KdmFyIHVhID0gKG11YS5pbmRleE9mKCdydjoxMScpICsgbXVhLmluZGV4T2YoJ01TSUUnKSkgPj0gMDsNCmRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdmctY29udGFpbmVyJykub25jb250ZXh0bWVudSA9IGZ1bmN0aW9uIChldmVudCkgew0KICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7DQp9DQpkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc3ZnLWNvbnRhaW5lcicpLm9ubW91c2Vkb3duID0gZnVuY3Rpb24gKGV2ZW50KSB7DQogICAgaWYgKGV2ZW50LndoaWNoID09IDMpIHsNCiAgICAgICAgdGhpcy5zdHlsZS5jdXJzb3IgPSAncG9pbnRlcic7DQogICAgICAgIHRoaXMub25tb3VzZW1vdmUgPSBmdW5jdGlvbiAoZXYpIHsNCiAgICAgICAgICAgIHRoaXMuc2Nyb2xsQnkoLShldi5tb3ZlbWVudFgpLCAwKTsNCiAgICAgICAgICAgIHdpbmRvdy5zY3JvbGxCeSgwLCAtKGV2Lm1vdmVtZW50WSkpDQogICAgICAgIH0NCiAgICAgICAgdGhpcy5vbm1vdXNldXAgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnN0eWxlLmN1cnNvciA9IG51bGw7DQogICAgICAgICAgICB0aGlzLm9ubW91c2V1cCA9IG51bGw7DQogICAgICAgICAgICB0aGlzLm9ubW91c2Vtb3ZlID0gbnVsbDsNCiAgICAgICAgfQ0KICAgIH0NCn0NCk51bWJlci5wcm90b3R5cGUudG9zdWl0c3ZnID0gZnVuY3Rpb24gKCkgew0KICAgIHZhciBudW0gPSB0aGlzLnZhbHVlT2YoKTsNCiAgICBpZiAobnVtICUgMSA9PT0gMCkgew0KICAgICAgICByZXR1cm4gbnVtICsgMC41DQogICAgfSBlbHNlIHJldHVybiBudW07DQp9Ow0KTnVtYmVyLnByb3RvdHlwZS5wbHVzeiA9IGZ1bmN0aW9uICgpIHsNCiAgICB2YXIgbnVtID0gdGhpcy52YWx1ZU9mKCk7DQogICAgcmV0dXJuIG51bSA8IDEwID8gJzAnICsgbnVtIDogbnVtOw0KfTsNCmZ1bmN0aW9uIHBhcnNlRGF0ZShudW0pIHsNCiAgICB2YXIgZGF0ZSA9IG5ldyBEYXRlKG51bSk7DQogICAgdmFyIFkgPSBkYXRlLmdldEZ1bGxZZWFyKCkgKyAnLSc7DQogICAgdmFyIE0gPSAoZGF0ZS5nZXRNb250aCgpICsgMSkucGx1c3ooKSArICctJzsNCiAgICB2YXIgRCA9IGRhdGUuZ2V0RGF0ZSgpLnBsdXN6KCkgKyAnICc7DQogICAgdmFyIGggPSBkYXRlLmdldEhvdXJzKCkucGx1c3ooKSArICc6JzsNCiAgICB2YXIgbW0gPSBkYXRlLmdldE1pbnV0ZXMoKS5wbHVzeigpICsgJzonOw0KICAgIHZhciBzID0gZGF0ZS5nZXRTZWNvbmRzKCkucGx1c3ooKTsNCiAgICByZXR1cm4gWSArIE0gKyBEICsgaCArIG1tICsgczsNCn0NCi8vLS1wcmVkZWZpbmVkDQovL2NvbW1lbnQtLQ0KDQpmdW5jdGlvbiBnZXRjd2gocG9wdXApIHsNCiAgICBkb2N1bWVudC5ib2R5LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzdmcnKVswXS5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgdmFyIHcgPSBwb3B1cC5nZXRCb3VuZGluZ0NsaWVudFJlY3QoKS53aWR0aDsNCiAgICB2YXIgaCA9IHBvcHVwLmdldEJvdW5kaW5nQ2xpZW50UmVjdCgpLmhlaWdodDsNCiAgICByZXR1cm4gW3csIGhdDQp9DQpzdmdFbGVtcyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoInN2ZyIpOw0KZm9yIChsZXQgaW5kZXggPSAxOyBpbmRleCA8PSBzdmdFbGVtcy5sZW5ndGg7IGluZGV4KyspIHsNCiAgICAvLyB2YXIgY29tbWVudHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdzdmc6bnRoLWNoaWxkKCcgKyBpbmRleCArICcpIGc+Z1tlZFxcOmNvbW1lbnRdJyk7DQogICAgdmFyIGNvbW1lbnRzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChgc3ZnOm50aC1jaGlsZCgke2luZGV4fSkgZz5nW2VkXFw6Y29tbWVudF1gKTsNCiAgICBmb3IgKHZhciBpID0gMDsgaSA8IGNvbW1lbnRzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgIHZhciBwb3B1cCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAnZycpOw0KICAgICAgICB2YXIgcG9wdXBSID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICdyZWN0Jyk7DQogICAgICAgIHZhciBob3ZlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAncmVjdCcpOw0KICAgICAgICB2YXIgb2xpbmUgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ3JlY3QnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCdmaWxsJywgJyNjZGNkZmYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd4JywgJzAnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd5JywgJzAnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCdoZWlnaHQnLCAnMTYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd3aWR0aCcsICcxNicpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwtb3BhY2l0eScsICcwLjYnKTsNCiAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCBjb21tZW50c1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpKTsNCiAgICAgICAgaG92ZXIuc3R5bGUuZGlzcGxheSA9ICdub25lJzsNCiAgICAgICAgY29tbWVudHNbaV0uYXBwZW5kQ2hpbGQoaG92ZXIpOw0KICAgICAgICB2YXIgYSA9IEpTT04ucGFyc2UoY29tbWVudHNbaV0uZ2V0QXR0cmlidXRlKCdlZDpjb21tZW50JykpOw0KICAgICAgICB2YXIgaGVpZ2h0ID0gMDsNCiAgICAgICAgdmFyIGNhcnIgPSBbXTsNCiAgICAgICAgZm9yICh2YXIgaiA9IDA7IGogPCBhLmxlbmd0aDsgaisrKSB7DQogICAgICAgICAgICB2YXIgc3RhbXAgPSBOdW1iZXIoYVtqXS5EYXRlKSAqIDEwMDA7DQogICAgICAgICAgICB2YXIgdGltZSA9IHBhcnNlRGF0ZShzdGFtcCk7DQogICAgICAgICAgICB2YXIgbmFtZSA9IGFbal0uTmFtZTsNCiAgICAgICAgICAgIHZhciBtZXNzYWdlID0gYVtqXS5NZXNzYWdlOw0KICAgICAgICAgICAgdmFyIG1lc3NhZ2VBcnIgPSBtZXNzYWdlLnNwbGl0KC9cbi8pOw0KICAgICAgICAgICAgdmFyIG8gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ2cnKTsNCiAgICAgICAgICAgIHZhciBuID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICd0ZXh0Jyk7DQogICAgICAgICAgICB2YXIgdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAndGV4dCcpOw0KICAgICAgICAgICAgdmFyIG0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ3RleHQnKTsNCiAgICAgICAgICAgIG4uc2V0QXR0cmlidXRlKCd4JywgNSk7DQogICAgICAgICAgICBuLnNldEF0dHJpYnV0ZSgneScsIDEyKTsNCiAgICAgICAgICAgIG4uc2V0QXR0cmlidXRlKCdmaWxsJywgJyMwMDZlZmYnKTsNCiAgICAgICAgICAgIG4udGV4dENvbnRlbnQgPSBuYW1lICsgJzogJzsNCiAgICAgICAgICAgIG4uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCAnMTInKTsNCiAgICAgICAgICAgIHQuc2V0QXR0cmlidXRlKCd4JywgMjAwKTsNCiAgICAgICAgICAgIHQuc2V0QXR0cmlidXRlKCd5JywgMTIpOw0KICAgICAgICAgICAgdC5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCAnIzk2OTY5NicpOw0KICAgICAgICAgICAgdC50ZXh0Q29udGVudCA9IHRpbWU7DQogICAgICAgICAgICB0LnNldEF0dHJpYnV0ZSgnZm9udC1zaXplJywgJzEwJyk7DQogICAgICAgICAgICBtLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywgJ3RyYW5zbGF0ZSgyMCwyNyknKTsNCiAgICAgICAgICAgIG0uc2V0QXR0cmlidXRlKCdmb250LXNpemUnLCAnMTInKTsNCiAgICAgICAgICAgIGZvciAodmFyIGsgPSAwOyBrIDwgbWVzc2FnZUFyci5sZW5ndGg7IGsrKykgew0KICAgICAgICAgICAgICAgIHZhciB0cyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAndHNwYW4nKTsNCiAgICAgICAgICAgICAgICB0cy5zZXRBdHRyaWJ1dGUoJ3gnLCAnMCcpOw0KICAgICAgICAgICAgICAgIHRzLnNldEF0dHJpYnV0ZSgneScsIGsgKiAxNik7DQogICAgICAgICAgICAgICAgdHMudGV4dENvbnRlbnQgPSBtZXNzYWdlQXJyW2tdOw0KICAgICAgICAgICAgICAgIG0uYXBwZW5kQ2hpbGQodHMpOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgby5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsICd0cmFuc2xhdGUoMCwnICsgaGVpZ2h0ICsgJyknKTsNCiAgICAgICAgICAgIG8uYXBwZW5kQ2hpbGQobik7DQogICAgICAgICAgICBvLmFwcGVuZENoaWxkKHQpOw0KICAgICAgICAgICAgby5hcHBlbmRDaGlsZChtKTsNCiAgICAgICAgICAgIGNhcnIucHVzaChvKTsNCiAgICAgICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKG8pOw0KICAgICAgICAgICAgaGVpZ2h0ID0gKG1lc3NhZ2VBcnIubGVuZ3RoICsgMSkgKiAxNiArIGhlaWdodDsNCiAgICAgICAgfQ0KICAgICAgICB2YXIgd2FyciA9IGdldGN3aChwb3B1cCk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneCcsICcwJyk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneScsICcwJyk7DQogICAgICAgIHZhciBvdyA9IHdhcnJbMF0gKyAxMC41Ow0KICAgICAgICB2YXIgb2ggPSB3YXJyWzFdICsgMzsNCiAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCd3aWR0aCcsIG93KTsNCiAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCdoZWlnaHQnLCBvaCk7DQogICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgnZmlsbCcsICd3aGl0ZScpOw0KICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3N0cm9rZScsICcjNjU2NTY1Jyk7DQogICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKG9saW5lKTsNCiAgICAgICAgdmFyIGwgPSBjYXJyLmxlbmd0aDsNCiAgICAgICAgd2hpbGUgKGwtLSkgew0KICAgICAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQoY2FycltsXSk7DQogICAgICAgIH0NCiAgICAgICAgcG9wdXAub25tb3VzZW92ZXIgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOw0KICAgICAgICB9Ow0KICAgICAgICBwb3B1cC5vbm1vdXNlb3V0ID0gZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICB9Ow0KICAgICAgICB2YXIgY3MgPSBjb21tZW50c1tpXS5xdWVyeVNlbGVjdG9yKCd1c2UnKS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpLm1hdGNoKC9cKChcUyp8XFMqXHNcUyopXCkvKVsxXS5zcGxpdCgvIHwsLyk7DQogICAgICAgIHZhciBwcyA9IGNvbW1lbnRzW2ldLnBhcmVudE5vZGUuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKTsNCiAgICAgICAgaWYgKHBzLnN1YnN0cigwLCAyKSA9PSAndHInKSB7DQogICAgICAgICAgICB2YXIgcHBzID0gcHMubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgICAgIHZhciB4ID0gcGFyc2VGbG9hdChjc1swXSkgKyBwYXJzZUZsb2F0KHBwc1swXSk7DQogICAgICAgICAgICB2YXIgeSA9IHBhcnNlRmxvYXQocHBzWzFdKTsNCiAgICAgICAgICAgIHggPSB4LnRvc3VpdHN2ZygpOw0KICAgICAgICAgICAgeSA9IHkudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICB2YXIgdHJzdHIgPSAndHJhbnNsYXRlKCcgKyB4ICsgJywnICsgeSArICcpJzsNCiAgICAgICAgfQ0KICAgICAgICBlbHNlIGlmIChwcy5zdWJzdHIoMCwgMikgPT0gJ21hJykgew0KICAgICAgICAgICAgdmFyIHBwcyA9IHBzLm1hdGNoKC8oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pXCkkLyk7DQogICAgICAgICAgICB2YXIgbWFBcnIgPSBbcGFyc2VGbG9hdChwcHNbMV0pLCBwYXJzZUZsb2F0KHBwc1szXSksIHBhcnNlRmxvYXQocHBzWzVdKSwgcGFyc2VGbG9hdChwcHNbN10pLCBwYXJzZUZsb2F0KHBwc1s5XSksIHBhcnNlRmxvYXQocHBzWzExXSldOw0KICAgICAgICAgICAgaWYgKG1hQXJyWzFdID09IDApIHsNCiAgICAgICAgICAgICAgICB2YXIgeCA9IHBhcnNlRmxvYXQoY3NbMF0pOw0KICAgICAgICAgICAgICAgIHZhciB5ID0gcGFyc2VGbG9hdChjc1sxXSkgKyAxNjsNCiAgICAgICAgICAgICAgICB2YXIgeDEgPSB4ICogbWFBcnJbMF0gKyB5ICogbWFBcnJbMl0gKyBtYUFycls0XTsNCiAgICAgICAgICAgICAgICB2YXIgeTEgPSB4ICogbWFBcnJbMV0gKyB5ICogbWFBcnJbM10gKyBtYUFycls1XTsNCiAgICAgICAgICAgICAgICB4MSA9IHgxLnRvc3VpdHN2ZygpOw0KICAgICAgICAgICAgICAgIHkxID0geTEudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgdmFyIHRyc3RyID0gJ3RyYW5zbGF0ZSgnICsgeDEgKyAnLCcgKyB5MSArICcpJzsNCiAgICAgICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICAgICAgdmFyIHggPSBwYXJzZUZsb2F0KGNzWzBdKSArIDE2Ow0KICAgICAgICAgICAgICAgIHZhciB5ID0gcGFyc2VGbG9hdChjc1sxXSkgKyAxNjsNCiAgICAgICAgICAgICAgICB2YXIgeDEgPSB4ICogbWFBcnJbMF0gKyB5ICogbWFBcnJbMl0gKyBtYUFycls0XTsNCiAgICAgICAgICAgICAgICB2YXIgeTEgPSB4ICogbWFBcnJbMV0gKyB5ICogbWFBcnJbM10gKyBtYUFycls1XTsNCiAgICAgICAgICAgICAgICB4ID0gcGFyc2VGbG9hdChjc1swXSkgKyAxNjsNCiAgICAgICAgICAgICAgICB5ID0gcGFyc2VGbG9hdChjc1sxXSk7DQogICAgICAgICAgICAgICAgdmFyIHgyID0geCAqIG1hQXJyWzBdICsgeSAqIG1hQXJyWzJdICsgbWFBcnJbNF07DQogICAgICAgICAgICAgICAgdmFyIHkyID0geCAqIG1hQXJyWzFdICsgeSAqIG1hQXJyWzNdICsgbWFBcnJbNV07DQogICAgICAgICAgICAgICAgdmFyIGZ4ID0geDEgPCB4MiA/IHgxLnRvc3VpdHN2ZygpIDogeDIudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgdmFyIGZ5ID0geTEgPiB5MiA/IHkxLnRvc3VpdHN2ZygpIDogeTIudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgdmFyIG9mZnkgPSBNYXRoLmFicyh5MSAtIHkyKTsNCiAgICAgICAgICAgICAgICB2YXIgdHJzdHIgPSAndHJhbnNsYXRlKCcgKyBmeCArICcsJyArIGZ5ICsgJyknOw0KICAgICAgICAgICAgICAgIHBvcHVwUi5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsIG9mZnkudG9TdHJpbmcoKSk7DQogICAgICAgICAgICAgICAgcG9wdXBSLnNldEF0dHJpYnV0ZSgnd2lkdGgnLCAnMTYnKTsNCiAgICAgICAgICAgICAgICBwb3B1cFIuc2V0QXR0cmlidXRlKCd5JywgKC1vZmZ5KS50b1N0cmluZygpKTsNCiAgICAgICAgICAgICAgICBwb3B1cFIuc2V0QXR0cmlidXRlKCdmaWxsJywgJ3RyYW5zcGFyZW50Jyk7DQogICAgICAgICAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQocG9wdXBSKTsNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgICAgICBwb3B1cC5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsIHRyc3RyKTsNCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCdjb21tZW50JywgJycpOw0KICAgICAgICBwb3B1cC5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICBsZXQgY29tbWVudGlkID0gY29tbWVudHNbaV0ucGFyZW50Tm9kZS5wYXJlbnROb2RlLmlkICsgIiwiICsgY29tbWVudHNbaV0ucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCdlZDpjb21tZW50aWQnLCBjb21tZW50aWQpOw0KICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZzpudGgtY2hpbGQoJyArIGluZGV4ICsgJyknKS5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgICAgIGNvbW1lbnRzW2ldLm9ubW91c2VvdmVyID0gZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgLy8gdmFyIGNvbW1lbnRpZCA9IHRoaXMucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgICAgIHRoaXMucXVlcnlTZWxlY3RvcigncmVjdCcpLnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmNvbW1lbnRpZD0nIiArIGNvbW1lbnRpZCArICInXVtjb21tZW50XSIpLnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOw0KICAgICAgICB9Ow0KICAgICAgICBjb21tZW50c1tpXS5vbm1vdXNlb3V0ID0gZnVuY3Rpb24gKCkgew0KICAgICAgICAgICAgLy8gdmFyIGNvbW1lbnRpZCA9IHRoaXMucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgICAgIC8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmVtb3ZlQWxsUmFuZ2VzKCk7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmNvbW1lbnRpZD0nIiArIGNvbW1lbnRpZCArICInXVtjb21tZW50XSIpLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgIH0NCiAgICB9DQp9DQovLy0tY29tbWVudA0KLy9ub3RlLS0NCmlmICghdWEpIHsNCiAgICBmdW5jdGlvbiBnZXR3aChzLCBwKSB7DQogICAgICAgIHZhciBtYWlucCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOw0KICAgICAgICBtYWlucC5zdHlsZS5jc3NUZXh0ID0gczsNCiAgICAgICAgbWFpbnAuc3R5bGUuZGlzcGxheSA9ICdpbmxpbmUtYmxvY2snOw0KICAgICAgICBtYWlucC5zdHlsZS5tYXhXaWR0aCA9ICc0MDBweCc7DQogICAgICAgIG1haW5wLnN0eWxlLndvcmRCcmVhayA9ICdicmVhay1hbGwnOw0KICAgICAgICBtYWlucC5pbm5lckhUTUwgPSBwOw0KICAgICAgICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKG1haW5wKTsNCiAgICAgICAgLy8gdmFyIHcgPSBtYWlucC5jbGllbnRXaWR0aDsNCiAgICAgICAgLy8gdmFyIGggPSBtYWlucC5jbGllbnRIZWlnaHQ7DQogICAgICAgIGxldCB7IHdpZHRoLGhlaWdodCB9ID0gbWFpbnAuZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7DQogICAgICAgIHZhciB3ID0gTWF0aC5jZWlsKHdpZHRoKQ0KICAgICAgICB2YXIgaCA9IE1hdGguY2VpbChoZWlnaHQpDQogICAgICAgIGRvY3VtZW50LmJvZHkucmVtb3ZlQ2hpbGQobWFpbnApOw0KICAgICAgICByZXR1cm4gW3csIGhdDQogICAgfQ0KICAgIHN2Z0VsZW1zID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgic3ZnIik7DQogICAgZm9yIChsZXQgaW5kZXggPSAxOyBpbmRleCA8PSBzdmdFbGVtcy5sZW5ndGg7IGluZGV4KyspIHsNCiAgICAgICAgdmFyIG5vdGVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnc3ZnOm50aC1jaGlsZCgnICsgaW5kZXggKyAnKSBnPmdbZWRcXDpub3RlXScpOw0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IG5vdGVzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgYSA9IG5vdGVzW2ldLmdldEF0dHJpYnV0ZSgnZWQ6bm90ZScpOw0KICAgICAgICAgICAgdmFyIG5vdGVMb2NrID0gbm90ZXNbaV0uZ2V0QXR0cmlidXRlKCdlZDpub3RlbG9jaycpOw0KICAgICAgICAgICAgaWYgKG5vdGVMb2NrID09ICd0cnVlJykgew0KICAgICAgICAgICAgICAgIGNvbnRpbnVlOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgdmFyIG1haW5wID0gYS5tYXRjaCgvPGJvZHlbXj5dKj4oLiopPFwvYm9keT4vKVsxXTsNCiAgICAgICAgICAgIHZhciBtYWlucyA9IGEubWF0Y2goL3N0eWxlPSIoLio/KSIvKVsxXTsNCiAgICAgICAgICAgIHZhciBvdXQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ2cnKTsNCiAgICAgICAgICAgIHZhciBvbGluZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAncmVjdCcpOw0KICAgICAgICAgICAgdmFyIHBvcHVwID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICdmb3JlaWduT2JqZWN0Jyk7DQogICAgICAgICAgICB2YXIgcG9wdXBSID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICdyZWN0Jyk7DQogICAgICAgICAgICB2YXIgaG92ZXIgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ3JlY3QnKTsNCiAgICAgICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbCcsICcjY2RjZGZmJyk7DQogICAgICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3gnLCAnMCcpOw0KICAgICAgICAgICAgaG92ZXIuc2V0QXR0cmlidXRlKCd5JywgJzAnKTsNCiAgICAgICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnaGVpZ2h0JywgJzE2Jyk7DQogICAgICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywgJzE2Jyk7DQogICAgICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwtb3BhY2l0eScsICcwLjYnKTsNCiAgICAgICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgndHJhbnNmb3JtJywgbm90ZXNbaV0ucXVlcnlTZWxlY3RvcigndXNlJykuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKSk7DQogICAgICAgICAgICBob3Zlci5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICAgICAgbm90ZXNbaV0uYXBwZW5kQ2hpbGQoaG92ZXIpOw0KICAgICAgICAgICAgcG9wdXAuc3R5bGUuY3NzVGV4dCA9IG1haW5zOw0KICAgICAgICAgICAgcG9wdXAuaW5uZXJIVE1MID0gbWFpbnA7DQogICAgICAgICAgICB2YXIgd2ggPSBnZXR3aChtYWlucywgbWFpbnApOw0KICAgICAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd3aWR0aCcsIHdoWzBdKTsNCiAgICAgICAgICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jywgd2hbMV0pOw0KICAgICAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCAndHJhbnNsYXRlKDgsNCknKTsNCiAgICAgICAgICAgIHBvcHVwLnN0eWxlLndvcmRCcmVhayA9ICdicmVhay1hbGwnOw0KICAgICAgICAgICAgcG9wdXAuc3R5bGUudGV4dEFsaWduID0gJ2xlZnQnOw0KICAgICAgICAgICAgb2xpbmUuc2V0QXR0cmlidXRlKCd4JywgJzAnKTsNCiAgICAgICAgICAgIG9saW5lLnNldEF0dHJpYnV0ZSgneScsICcwJyk7DQogICAgICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywgd2hbMF0gKyAxNik7DQogICAgICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsIHdoWzFdICsgOCk7DQogICAgICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ3N0cm9rZScsICcjYTI3YTAwJyk7DQogICAgICAgICAgICBvbGluZS5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCAnI2ZmZTc5ZCcpOw0KICAgICAgICAgICAgb3V0LmFwcGVuZENoaWxkKG9saW5lKTsNCiAgICAgICAgICAgIG91dC5hcHBlbmRDaGlsZChwb3B1cCk7DQogICAgICAgICAgICBvdXQuc2V0QXR0cmlidXRlKCdub3RlJywgJycpOw0KICAgICAgICAgICAgb3V0LnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgICAgICBsZXQgbm90ZWlkID0gbm90ZXNbaV0ucGFyZW50Tm9kZS5wYXJlbnROb2RlLmlkICsgIiwiICsgbm90ZXNbaV0ucGFyZW50Tm9kZS5pZDsNCiAgICAgICAgICAgIG91dC5zZXRBdHRyaWJ1dGUoJ2VkOm5vdGVpZCcsIG5vdGVpZCk7DQogICAgICAgICAgICBvdXQub25tb3VzZW92ZXIgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJzsNCiAgICAgICAgICAgIH07DQogICAgICAgICAgICBvdXQub25tb3VzZW91dCA9IGZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgd2luZG93LmdldFNlbGVjdGlvbiA/IHdpbmRvdy5nZXRTZWxlY3Rpb24oKS5yZW1vdmVSYW5nZSh3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmUpOmRvY3VtZW50LnNlbGVjdGlvbi5lbXB0eSgpOw0KDQogICAgICAgICAgICAgICAgdGhpcy5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIHZhciBjcyA9IG5vdGVzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgICAgIHZhciBwcyA9IG5vdGVzW2ldLnBhcmVudE5vZGUuZ2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nKTsNCiAgICAgICAgICAgIGlmIChwcy5zdWJzdHIoMCwgMikgPT0gJ3RyJykgew0KICAgICAgICAgICAgICAgIHZhciBwcHMgPSBwcy5tYXRjaCgvXCgoXFMqfFxTKlxzXFMqKVwpLylbMV0uc3BsaXQoLyB8LC8pOw0KICAgICAgICAgICAgICAgIHZhciB4ID0gcGFyc2VGbG9hdChjc1swXSkgKyBwYXJzZUZsb2F0KHBwc1swXSk7DQogICAgICAgICAgICAgICAgdmFyIHkgPSBwYXJzZUZsb2F0KHBwc1sxXSk7DQogICAgICAgICAgICAgICAgeCA9IHgudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgeSA9IHkudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgdmFyIHRyc3RyID0gJ3RyYW5zbGF0ZSgnICsgeCArICcsJyArIHkgKyAnKSc7DQogICAgICAgICAgICB9IGVsc2UgaWYgKHBzLnN1YnN0cigwLCAyKSA9PSAnbWEnKSB7DQogICAgICAgICAgICAgICAgdmFyIHBwcyA9IHBzLm1hdGNoKC8oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pW1wsIF0oXC0/XGQrKFwuXGQrKT8pXCkkLyk7DQogICAgICAgICAgICAgICAgdmFyIG1hQXJyID0gW3BhcnNlRmxvYXQocHBzWzFdKSwgcGFyc2VGbG9hdChwcHNbM10pLCBwYXJzZUZsb2F0KHBwc1s1XSksIHBhcnNlRmxvYXQocHBzWzddKSwgcGFyc2VGbG9hdChwcHNbOV0pLCBwYXJzZUZsb2F0KHBwc1sxMV0pXTsNCiAgICAgICAgICAgICAgICBpZiAobWFBcnJbMV0gPT0gMCkgew0KICAgICAgICAgICAgICAgICAgICB2YXIgeCA9IHBhcnNlRmxvYXQoY3NbMF0pOw0KICAgICAgICAgICAgICAgICAgICB2YXIgeSA9IHBhcnNlRmxvYXQoY3NbMV0pICsgMTY7DQogICAgICAgICAgICAgICAgICAgIHZhciB4MSA9IHggKiBtYUFyclswXSArIHkgKiBtYUFyclsyXSArIG1hQXJyWzRdOw0KICAgICAgICAgICAgICAgICAgICB2YXIgeTEgPSB4ICogbWFBcnJbMV0gKyB5ICogbWFBcnJbM10gKyBtYUFycls1XTsNCiAgICAgICAgICAgICAgICAgICAgeDEgPSB4MS50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICAgICAgeTEgPSB5MS50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHRyc3RyID0gJ3RyYW5zbGF0ZSgnICsgeDEgKyAnLCcgKyB5MSArICcpJzsNCiAgICAgICAgICAgICAgICB9IGVsc2Ugew0KICAgICAgICAgICAgICAgICAgICB2YXIgeCA9IHBhcnNlRmxvYXQoY3NbMF0pICsgMTY7DQogICAgICAgICAgICAgICAgICAgIHZhciB5ID0gcGFyc2VGbG9hdChjc1sxXSkgKyAxNjsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHgxID0geCAqIG1hQXJyWzBdICsgeSAqIG1hQXJyWzJdICsgbWFBcnJbNF07DQogICAgICAgICAgICAgICAgICAgIHZhciB5MSA9IHggKiBtYUFyclsxXSArIHkgKiBtYUFyclszXSArIG1hQXJyWzVdOw0KICAgICAgICAgICAgICAgICAgICB4ID0gcGFyc2VGbG9hdChjc1swXSkgKyAxNjsNCiAgICAgICAgICAgICAgICAgICAgeSA9IHBhcnNlRmxvYXQoY3NbMV0pOw0KICAgICAgICAgICAgICAgICAgICB2YXIgeDIgPSB4ICogbWFBcnJbMF0gKyB5ICogbWFBcnJbMl0gKyBtYUFycls0XTsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHkyID0geCAqIG1hQXJyWzFdICsgeSAqIG1hQXJyWzNdICsgbWFBcnJbNV07DQogICAgICAgICAgICAgICAgICAgIHZhciBmeCA9IHgxIDwgeDIgPyB4MS50b3N1aXRzdmcoKSA6IHgyLnRvc3VpdHN2ZygpOw0KICAgICAgICAgICAgICAgICAgICB2YXIgZnkgPSB5MSA+IHkyID8geTEudG9zdWl0c3ZnKCkgOiB5Mi50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICAgICAgdmFyIG9mZnkgPSBNYXRoLmFicyh5MSAtIHkyKTsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHRyc3RyID0gJ3RyYW5zbGF0ZSgnICsgZnggKyAnLCcgKyBmeSArICcpJzsNCiAgICAgICAgICAgICAgICAgICAgcG9wdXBSLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jywgb2ZmeS50b1N0cmluZygpKTsNCiAgICAgICAgICAgICAgICAgICAgcG9wdXBSLnNldEF0dHJpYnV0ZSgnd2lkdGgnLCAnMTYnKTsNCiAgICAgICAgICAgICAgICAgICAgcG9wdXBSLnNldEF0dHJpYnV0ZSgneScsICgtb2ZmeSkudG9TdHJpbmcoKSk7DQogICAgICAgICAgICAgICAgICAgIHBvcHVwUi5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCAndHJhbnNwYXJlbnQnKTsNCiAgICAgICAgICAgICAgICAgICAgcG9wdXAuYXBwZW5kQ2hpbGQocG9wdXBSKTsNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgICAgICBvdXQuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCB0cnN0cik7DQogICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnLWNvbnRhaW5lciA+IHN2ZzpudGgtY2hpbGQoJyArIGluZGV4ICsgJyknKS5hcHBlbmRDaGlsZChvdXQpOw0KICAgICAgICAgICAgbm90ZXNbaV0ub25tb3VzZW92ZXIgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICAgICAgLy8gdmFyIG5vdGVpZCA9IG5vdGVpZDsNCiAgICAgICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJzsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6bm90ZWlkPSciICsgbm90ZWlkICsgIiddW25vdGVdIikuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7DQogICAgICAgICAgICB9Ow0KICAgICAgICAgICAgbm90ZXNbaV0ub25tb3VzZW91dCA9IGZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgICAgICAvLyB2YXIgbm90ZWlkID0gbm90ZWlkOw0KICAgICAgICAgICAgICAgIC8vICAgICAgICB3aW5kb3cuZ2V0U2VsZWN0aW9uKCkucmVtb3ZlQWxsUmFuZ2VzKCk7DQogICAgICAgICAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZGlzcGxheSA9ICdub25lJzsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6bm90ZWlkPSciICsgbm90ZWlkICsgIiddW25vdGVdIikuc3R5bGUuZGlzcGxheSA9ICdub25lJzsNCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCn0gZWxzZSB7DQogICAgY29uc29sZS5sb2coJ+aKseatie+8jElF5rWP6KeI5Zmo5LiN5pSv5oyBbm90Zeino+aekO+8jOivt+S9v+eUqOWFtuS7luWGheaguOa1j+iniOWZqOOAguiwouiwou+8gScpDQp9DQovLy0tbm90ZQ0KLy9oeXBlcmxpbmstLQ0KZnVuY3Rpb24gZ2V0bWF4bGVuKGFyciwgYnJyKSB7DQogICAgdmFyIGwgPSAwOw0KICAgIHZhciBsbCA9IDA7DQogICAgZm9yICh2YXIgaiA9IDA7IGogPCBhcnIubGVuZ3RoOyBqKyspIHsNCiAgICAgICAgdmFyIGUgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ3RleHQnKTsNCiAgICAgICAgaWYgKCFpc05hTihsaW5rYXJyW2pdKSkgew0KICAgICAgICAgICAgZS50ZXh0Q29udGVudCA9ICdQYWdlLScgKyBhcnJbal07DQogICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICBlLnRleHRDb250ZW50ID0gYXJyW2pdOw0KICAgICAgICB9DQogICAgICAgIGUuc3R5bGUuZm9udFNpemUgPSAnMTJweCc7DQogICAgICAgIGRvY3VtZW50LmJvZHkuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3N2ZycpWzBdLmFwcGVuZENoaWxkKGUpOw0KICAgICAgICB2YXIgZXcgPSBlLmdldEJCb3goKS53aWR0aDsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0ucmVtb3ZlQ2hpbGQoZSk7DQogICAgICAgIHZhciBoID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICd0ZXh0Jyk7DQogICAgICAgIGgudGV4dENvbnRlbnQgPSBicnJbal07DQogICAgICAgIGguc3R5bGUuZm9udFNpemUgPSAnMTJweCc7DQogICAgICAgIGguc3R5bGUuZm9udFdlaWdodCA9ICdib2xkJzsNCiAgICAgICAgZG9jdW1lbnQuYm9keS5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc3ZnJylbMF0uYXBwZW5kQ2hpbGQoaCk7DQogICAgICAgIHZhciBodyA9IGguZ2V0QkJveCgpLndpZHRoOw0KICAgICAgICBkb2N1bWVudC5ib2R5LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzdmcnKVswXS5yZW1vdmVDaGlsZChoKTsNCiAgICAgICAgbCA9IGV3ID4gaHcgPyBldyA6IGh3Ow0KICAgICAgICBsbCA9IGwgPiBsbCA/IGwgOiBsbDsNCiAgICB9DQogICAgcmV0dXJuIGxsOw0KfQ0Kc3ZnRWxlbXMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJzdmciKTsNCmZvciAobGV0IGluZGV4ID0gMTsgaW5kZXggPD0gc3ZnRWxlbXMubGVuZ3RoOyBpbmRleCsrKSB7DQogICAgbGV0IHN2Z0VsZW0gPSBzdmdFbGVtc1tpbmRleF07DQogICAgbGV0IGxpbmtzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgic3ZnOm50aC1jaGlsZCgiICsgaW5kZXggKyAiKSBnPmdbZWRcXDpoeXBlcmxpbmtdIikNCiAgICBjb25zb2xlLmxvZyhsaW5rcyk7DQogICAgLy8gdmFyIGxpbmtzPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2c+Z1tlZFxcOmh5cGVybGlua10nKTsNCiAgICBmb3IgKHZhciBpID0gMDsgaSA8IGxpbmtzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgIHZhciBwb3B1cCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAnZycpOw0KICAgICAgICB2YXIgcG9wdXBSID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICdyZWN0Jyk7DQogICAgICAgIHZhciBob3ZlciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAncmVjdCcpOw0KICAgICAgICB2YXIgZGVzY2FyciA9IFtdOw0KICAgICAgICB2YXIgbGlua2FyciA9IFtdOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCAnI2NkY2RmZicpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3gnLCAnMCcpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3knLCAnMCcpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsICcxNicpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywgJzE2Jyk7DQogICAgICAgIGhvdmVyLnNldEF0dHJpYnV0ZSgnZmlsbC1vcGFjaXR5JywgJzAuNicpOw0KICAgICAgICBob3Zlci5zZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScsIGxpbmtzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykpOw0KICAgICAgICBob3Zlci5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICBsaW5rc1tpXS5hcHBlbmRDaGlsZChob3Zlcik7DQogICAgICAgIC8vIGNvbnNvbGUubG9nKGxpbmtzW2ldLmdldEF0dHJpYnV0ZSgnZWQ6aHlwZXJsaW5rJykpOw0KICAgICAgICB2YXIgYSA9IEpTT04ucGFyc2UobGlua3NbaV0uZ2V0QXR0cmlidXRlKCdlZDpoeXBlcmxpbmsnKSk7DQogICAgICAgIHZhciBjcyA9IGxpbmtzW2ldLnF1ZXJ5U2VsZWN0b3IoJ3VzZScpLmdldEF0dHJpYnV0ZSgndHJhbnNmb3JtJykubWF0Y2goL1woKFxTKnxcUypcc1xTKilcKS8pWzFdLnNwbGl0KC8gfCwvKTsNCiAgICAgICAgdmFyIHBzID0gbGlua3NbaV0ucGFyZW50Tm9kZS5nZXRBdHRyaWJ1dGUoJ3RyYW5zZm9ybScpOw0KICAgICAgICBpZiAocHMuc3Vic3RyKDAsIDIpID09ICd0cicpIHsNCiAgICAgICAgICAgIHZhciBwcHMgPSBwcy5tYXRjaCgvXCgoXFMqfFxTKlxzXFMqKVwpLylbMV0uc3BsaXQoLyB8LC8pOw0KICAgICAgICAgICAgdmFyIHggPSBwYXJzZUZsb2F0KGNzWzBdKSArIHBhcnNlRmxvYXQocHBzWzBdKTsNCiAgICAgICAgICAgIHZhciB5ID0gcGFyc2VGbG9hdChwcHNbMV0pOw0KICAgICAgICAgICAgeCA9IHgudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICB5ID0geS50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgIHZhciB0cnN0ciA9ICd0cmFuc2xhdGUoJyArIHggKyAnLCcgKyB5ICsgJyknOw0KICAgICAgICB9IGVsc2UgaWYgKHBzLnN1YnN0cigwLCAyKSA9PSAnbWEnKSB7DQogICAgICAgICAgICB2YXIgcHBzID0gcHMubWF0Y2goLyhcLT9cZCsoXC5cZCspPylbXCwgXShcLT9cZCsoXC5cZCspPylbXCwgXShcLT9cZCsoXC5cZCspPylbXCwgXShcLT9cZCsoXC5cZCspPylbXCwgXShcLT9cZCsoXC5cZCspPylbXCwgXShcLT9cZCsoXC5cZCspPylcKSQvKTsNCiAgICAgICAgICAgIHZhciBtYUFyciA9IFtwYXJzZUZsb2F0KHBwc1sxXSksIHBhcnNlRmxvYXQocHBzWzNdKSwgcGFyc2VGbG9hdChwcHNbNV0pLCBwYXJzZUZsb2F0KHBwc1s3XSksIHBhcnNlRmxvYXQocHBzWzldKSwgcGFyc2VGbG9hdChwcHNbMTFdKV07DQogICAgICAgICAgICBpZiAobWFBcnJbMV0gPT0gMCkgew0KICAgICAgICAgICAgICAgIHZhciB4ID0gcGFyc2VGbG9hdChjc1swXSk7DQogICAgICAgICAgICAgICAgdmFyIHkgPSBwYXJzZUZsb2F0KGNzWzFdKSArIDE2Ow0KICAgICAgICAgICAgICAgIHZhciB4MSA9IHggKiBtYUFyclswXSArIHkgKiBtYUFyclsyXSArIG1hQXJyWzRdOw0KICAgICAgICAgICAgICAgIHZhciB5MSA9IHggKiBtYUFyclsxXSArIHkgKiBtYUFyclszXSArIG1hQXJyWzVdOw0KICAgICAgICAgICAgICAgIHgxID0geDEudG9zdWl0c3ZnKCk7DQogICAgICAgICAgICAgICAgeTEgPSB5MS50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICB2YXIgdHJzdHIgPSAndHJhbnNsYXRlKCcgKyB4MSArICcsJyArIHkxICsgJyknOw0KICAgICAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgICAgICB2YXIgeCA9IHBhcnNlRmxvYXQoY3NbMF0pICsgMTY7DQogICAgICAgICAgICAgICAgdmFyIHkgPSBwYXJzZUZsb2F0KGNzWzFdKSArIDE2Ow0KICAgICAgICAgICAgICAgIHZhciB4MSA9IHggKiBtYUFyclswXSArIHkgKiBtYUFyclsyXSArIG1hQXJyWzRdOw0KICAgICAgICAgICAgICAgIHZhciB5MSA9IHggKiBtYUFyclsxXSArIHkgKiBtYUFyclszXSArIG1hQXJyWzVdOw0KICAgICAgICAgICAgICAgIHggPSBwYXJzZUZsb2F0KGNzWzBdKSArIDE2Ow0KICAgICAgICAgICAgICAgIHkgPSBwYXJzZUZsb2F0KGNzWzFdKTsNCiAgICAgICAgICAgICAgICB2YXIgeDIgPSB4ICogbWFBcnJbMF0gKyB5ICogbWFBcnJbMl0gKyBtYUFycls0XTsNCiAgICAgICAgICAgICAgICB2YXIgeTIgPSB4ICogbWFBcnJbMV0gKyB5ICogbWFBcnJbM10gKyBtYUFycls1XTsNCiAgICAgICAgICAgICAgICB2YXIgZnggPSB4MSA8IHgyID8geDEudG9zdWl0c3ZnKCkgOiB4Mi50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICB2YXIgZnkgPSB5MSA+IHkyID8geTEudG9zdWl0c3ZnKCkgOiB5Mi50b3N1aXRzdmcoKTsNCiAgICAgICAgICAgICAgICB2YXIgb2ZmeSA9IE1hdGguYWJzKHkxIC0geTIpOw0KICAgICAgICAgICAgICAgIHZhciB0cnN0ciA9ICd0cmFuc2xhdGUoJyArIGZ4ICsgJywnICsgZnkgKyAnKSc7DQogICAgICAgICAgICAgICAgcG9wdXBSLnNldEF0dHJpYnV0ZSgnaGVpZ2h0Jywgb2ZmeS50b1N0cmluZygpKTsNCiAgICAgICAgICAgICAgICBwb3B1cFIuc2V0QXR0cmlidXRlKCd3aWR0aCcsICcxNicpOw0KICAgICAgICAgICAgICAgIHBvcHVwUi5zZXRBdHRyaWJ1dGUoJ3knLCAoLW9mZnkpLnRvU3RyaW5nKCkpOw0KICAgICAgICAgICAgICAgIHBvcHVwUi5zZXRBdHRyaWJ1dGUoJ2ZpbGwnLCAndHJhbnNwYXJlbnQnKTsNCiAgICAgICAgICAgICAgICBwb3B1cC5hcHBlbmRDaGlsZChwb3B1cFIpOw0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgICAgIHZhciBhbCA9IGEubGVuZ3RoOw0KICAgICAgICBmb3IgKHZhciBqID0gMDsgaiA8IGFsOyBqKyspIHsNCiAgICAgICAgICAgIGxpbmthcnIucHVzaChhW2pdLmxpbmspOw0KICAgICAgICAgICAgZGVzY2Fyci5wdXNoKGFbal0uZGVzYyk7DQogICAgICAgIH0NCiAgICAgICAgcG9wdXAuc2V0QXR0cmlidXRlKCd0cmFuc2Zvcm0nLCB0cnN0cik7DQogICAgICAgIHZhciBtYXggPSBnZXRtYXhsZW4obGlua2FyciwgZGVzY2Fycik7DQogICAgICAgIGZvciAodmFyIGsgPSAwOyBrIDwgYWw7IGsrKykgew0KICAgICAgICAgICAgdmFyIGMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ2EnKTsNCiAgICAgICAgICAgIHZhciBkID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudE5TKCdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycsICdyZWN0Jyk7DQogICAgICAgICAgICB2YXIgZSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnROUygnaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnLCAndGV4dCcpOw0KICAgICAgICAgICAgdmFyIGYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50TlMoJ2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJywgJ3RleHQnKTsNCiAgICAgICAgICAgIGlmIChpc05hTihsaW5rYXJyW2tdKSkgew0KICAgICAgICAgICAgICAgIGMuc2V0QXR0cmlidXRlTlMoImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiwgInhsaW5rIiwgImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiKTsNCiAgICAgICAgICAgICAgICBjLnNldEF0dHJpYnV0ZU5TKCJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiwgImhyZWYiLCBsaW5rYXJyW2tdKTsNCiAgICAgICAgICAgICAgICBjLnNldEF0dHJpYnV0ZSgndGFyZ2V0JywgJ19ibGFuaycpOw0KICAgICAgICAgICAgICAgIGUudGV4dENvbnRlbnQgPSBsaW5rYXJyW2tdOw0KICAgICAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgICAgICBlLnRleHRDb250ZW50ID0gJ1BhZ2UtJyArIGxpbmthcnJba107DQogICAgICAgICAgICAgICAgYy5zZXRBdHRyaWJ1dGVOUygiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLCAieGxpbmsiLCAiaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIpOw0KICAgICAgICAgICAgICAgIGMuc2V0QXR0cmlidXRlTlMoImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiLCAiaHJlZiIsICIjIiArIGxpbmthcnJba10pOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3dpZHRoJywgbWF4ICsgMTApOw0KICAgICAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ2hlaWdodCcsICczMycpOw0KICAgICAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3N0cm9rZScsICcjOTk5OTk5Jyk7DQogICAgICAgICAgICBkLnNldEF0dHJpYnV0ZSgnZmlsbCcsICd3aGl0ZScpOw0KICAgICAgICAgICAgZC5zZXRBdHRyaWJ1dGUoJ3knLCAzMyAqIGspOw0KICAgICAgICAgICAgZi50ZXh0Q29udGVudCA9IGRlc2NhcnJba107DQogICAgICAgICAgICBmLnN0eWxlLmZvbnRTaXplID0gJzEycHgnOw0KICAgICAgICAgICAgZi5zdHlsZS5mb250V2VpZ2h0ID0gJ2JvbGQnOw0KICAgICAgICAgICAgZi5zZXRBdHRyaWJ1dGUoJ3gnLCA1KTsNCiAgICAgICAgICAgIGYuc2V0QXR0cmlidXRlKCd5JywgMzMgKiBrICsgMTIpOw0KICAgICAgICAgICAgZS5zdHlsZS5mb250U2l6ZSA9ICcxMnB4JzsNCiAgICAgICAgICAgIGUuc2V0QXR0cmlidXRlKCd5JywgMzMgKiBrICsgMjgpOw0KICAgICAgICAgICAgZS5zZXRBdHRyaWJ1dGUoJ3gnLCA1KTsNCiAgICAgICAgICAgIGMuYXBwZW5kQ2hpbGQoZCk7DQogICAgICAgICAgICBjLmFwcGVuZENoaWxkKGYpOw0KICAgICAgICAgICAgYy5hcHBlbmRDaGlsZChlKTsNCiAgICAgICAgICAgIGMub25tb3VzZW92ZXIgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICAgICAgdGhpcy5xdWVyeVNlbGVjdG9yKCdyZWN0Jykuc3R5bGUuZmlsbCA9ICcjZTFlMWZmJw0KICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIGMub25tb3VzZW91dCA9IGZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5maWxsID0gJ3doaXRlJw0KICAgICAgICAgICAgfTsNCiAgICAgICAgICAgIHBvcHVwLmFwcGVuZENoaWxkKGMpOw0KICAgICAgICB9DQogICAgICAgIHBvcHVwLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgIHBvcHVwLnNldEF0dHJpYnV0ZSgnaHlwZXJsaW5rJywgJycpOw0KICAgICAgICBwb3B1cC5zZXRBdHRyaWJ1dGUoJ2VkOmxpbmtpZCcsIGxpbmtzW2ldLnBhcmVudE5vZGUucGFyZW50Tm9kZS5pZCArICIsIiArIGxpbmtzW2ldLnBhcmVudE5vZGUuaWQpOw0KICAgICAgICBwb3B1cC5vbm1vdXNlb3ZlciA9IGZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIHRoaXMuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7DQogICAgICAgIH07DQogICAgICAgIHBvcHVwLm9uY2xpY2sgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgIH07DQogICAgICAgIHBvcHVwLm9ubW91c2VvdXQgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB0aGlzLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgIH07DQogICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJyNzdmctY29udGFpbmVyID4gc3ZnOm50aC1jaGlsZCgnICsgaW5kZXggKyAnKScpLmFwcGVuZENoaWxkKHBvcHVwKTsNCiAgICAgICAgbGlua3NbaV0ub25tb3VzZW92ZXIgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgICAgICB2YXIgbGlua2lkID0gdGhpcy5wYXJlbnROb2RlLnBhcmVudE5vZGUuaWQgKyAiLCIgKyB0aGlzLnBhcmVudE5vZGUuaWQ7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJzsNCiAgICAgICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDpsaW5raWQ9JyIgKyBsaW5raWQgKyAiJ11baHlwZXJsaW5rXSIpLnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOw0KICAgICAgICAgICAgLy8gcG9wdXAuc3R5bGUuZGlzcGxheSA9ICdibG9jayc7DQogICAgICAgIH0NCiAgICAgICAgbGlua3NbaV0ub25tb3VzZW91dCA9IGZ1bmN0aW9uICgpIHsNCiAgICAgICAgICAgIC8vIHZhciBsaW5raWQgPSB0aGlzLnBhcmVudE5vZGUuaWQ7DQogICAgICAgICAgICB2YXIgbGlua2lkID0gdGhpcy5wYXJlbnROb2RlLnBhcmVudE5vZGUuaWQgKyAiLCIgKyB0aGlzLnBhcmVudE5vZGUuaWQ7DQogICAgICAgICAgICB0aGlzLnF1ZXJ5U2VsZWN0b3IoJ3JlY3QnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOw0KICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOmxpbmtpZD0nIiArIGxpbmtpZCArICInXVtoeXBlcmxpbmtdIikuc3R5bGUuZGlzcGxheSA9ICdub25lJzsNCiAgICAgICAgICAgIC8vIHBvcHVwLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7DQogICAgICAgIH0NCiAgICB9DQp9DQoNCi8vLS1oeXBlcmxpbmsNCi8vaW5pdGlhbGl6ZS0tDQp2YXIgc2hhcGUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdnW2VkXFw6dG9ndG9waWNpZF0nKTsNCnZhciBtSWQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdnW2VkXFw6dG9waWN0eXBlXScpOw0KdmFyIGRhdGFUcmVlID0ge307DQp2YXIgZXh0cmFSZWxhID0ge307DQp2YXIgY2hlY2tJRCA9ICcnOw0KZm9yICh2YXIgaSA9IDA7IGkgPCBtSWQubGVuZ3RoOyBpKyspIHsNCiAgICB2YXIgdHlwZSA9IG1JZFtpXS5nZXRBdHRyaWJ1dGUoJ2VkOnRvcGljdHlwZScpOw0KICAgIHZhciBzaWQgPSBtSWRbaV0uaWQ7DQogICAgaWYgKHR5cGUgIT09ICdjYWxsb3V0Jykgew0KICAgICAgICBpbml0KHNpZCwgZGF0YVRyZWUpDQogICAgfQ0KfQ0KZnVuY3Rpb24gaW5pdChpZCwgb2JqKSB7DQogICAgdmFyIGNoaWxkcyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImdbZWRcXDpwYXJlbnRpZD0nIiArIGlkICsgIiddOm5vdChbZWRcXDp0b3BpY3R5cGVdKSIpOw0KICAgIHZhciBjYWxscyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImdbZWRcXDpwYXJlbnRpZD0nIiArIGlkICsgIiddW2VkXFw6dG9waWN0eXBlXSIpOw0KICAgIHZhciBzdW1tYXJ5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgicGF0aFtlZFxcOnBhcmVudGlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0nc3VtbWFyeSddIik7DQogICAgdmFyIGJvdW5kYXJ5ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgicGF0aFtlZFxcOnBhcmVudGlkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0nYm91bmRhcnknXSIpOw0KICAgIHZhciByZWxhZnJvbSA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImdbZWRcXDpmcm9taWQqPSciICsgaWQgKyAiJ11bZWRcXDp0eXBlPSdyZWxhdGlvbiddIik7DQogICAgdmFyIHJlbGF0byA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoImdbZWRcXDp0b2lkKj0nIiArIGlkICsgIiddW2VkXFw6dHlwZT0ncmVsYXRpb24nXSIpOw0KICAgIG9ialsibSIgKyBpZF0gPSB7fTsNCiAgICB2YXIgdHlwZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOnRvcGljdHlwZScpOw0KICAgIHZhciBpdyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5nZXRBdHRyaWJ1dGUoJ2VkOndpZHRoJyk7DQogICAgdmFyIGloID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaWQpLmdldEF0dHJpYnV0ZSgnZWQ6aGVpZ2h0Jyk7DQogICAgaWYgKHR5cGUpIHsNCiAgICAgICAgb2JqWyJtIiArIGlkXS50eXBlID0gdHlwZTsNCiAgICB9DQogICAgaWYgKGl3ICYmIGloKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0ud2lkdGggPSBpdzsNCiAgICAgICAgb2JqWyJtIiArIGlkXS5oZWlnaHQgPSBpaDsNCiAgICB9DQogICAgaWYgKHJlbGFmcm9tLmxlbmd0aCAhPT0gMCkgew0KICAgICAgICBvYmpbIm0iICsgaWRdLnJlbGFmcm9tID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgcmVsYWZyb20ubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBpbmRleGlkID0gcmVsYWZyb21baV0uaWQ7DQogICAgICAgICAgICB2YXIgdG9pZCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGluZGV4aWQpLmdldEF0dHJpYnV0ZSgnZWQ6dG9pZCcpOw0KICAgICAgICAgICAgaWYgKGV4dHJhUmVsYVtpbmRleGlkXSA9PT0gdW5kZWZpbmVkKSB7DQogICAgICAgICAgICAgICAgZXh0cmFSZWxhW2luZGV4aWRdID0gew0KICAgICAgICAgICAgICAgICAgICBpZDogaW5kZXhpZCwNCiAgICAgICAgICAgICAgICAgICAgZnJvbWlkOiBpZCwNCiAgICAgICAgICAgICAgICAgICAgdG9pZDogdG9pZCwNCiAgICAgICAgICAgICAgICAgICAgaXNDOiBmYWxzZQ0KICAgICAgICAgICAgICAgIH07DQogICAgICAgICAgICB9DQogICAgICAgICAgICBvYmpbIm0iICsgaWRdLnJlbGFmcm9tW2luZGV4aWRdID0ge307DQogICAgICAgICAgICBvYmpbIm0iICsgaWRdLnJlbGFmcm9tLmRpc3BsYXkgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnID8gJ2Jsb2NrJyA6ICdub25lJzsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAocmVsYXRvLmxlbmd0aCAhPT0gMCkgew0KICAgICAgICBvYmpbIm0iICsgaWRdLnJlbGF0byA9IHt9Ow0KICAgICAgICBmb3IgKHZhciBpID0gMDsgaSA8IHJlbGF0by5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGluZGV4aWQgPSByZWxhdG9baV0uaWQ7DQogICAgICAgICAgICB2YXIgZnJvbWlkID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoaW5kZXhpZCkuZ2V0QXR0cmlidXRlKCdlZDpmcm9taWQnKTsNCiAgICAgICAgICAgIGlmIChleHRyYVJlbGFbaW5kZXhpZF0gPT09IHVuZGVmaW5lZCkgew0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtpbmRleGlkXSA9IHsNCiAgICAgICAgICAgICAgICAgICAgaWQ6IGluZGV4aWQsDQogICAgICAgICAgICAgICAgICAgIGZyb21pZDogZnJvbWlkLA0KICAgICAgICAgICAgICAgICAgICB0b2lkOiBpZCwNCiAgICAgICAgICAgICAgICAgICAgaXNDOiBmYWxzZQ0KICAgICAgICAgICAgICAgIH07DQogICAgICAgICAgICB9DQogICAgICAgICAgICBvYmpbIm0iICsgaWRdLnJlbGF0b1tpbmRleGlkXSA9IHt9Ow0KICAgICAgICAgICAgb2JqWyJtIiArIGlkXS5yZWxhdG8uZGlzcGxheSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKS5zdHlsZS5kaXNwbGF5ICE9PSAnbm9uZScgPyAnYmxvY2snIDogJ25vbmUnOw0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChjaGlsZHMubGVuZ3RoICE9PSAwKSB7DQogICAgICAgIG9ialsibSIgKyBpZF0uY2hpbGQgPSB7fTsNCiAgICAgICAgaWYgKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKSkgew0KICAgICAgICAgICAgLy8gY29uc29sZS5sb2coZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIgKyBpZCArICInXSIpLmNoaWxkTm9kZXNbMF0uZ2V0QXR0cmlidXRlKCd4bGluazpocmVmJykpOw0KICAgICAgICAgICAgdmFyIHRvZyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDp0b2d0b3BpY2lkPSciICsgaWQgKyAiJ10iKS5nZXRFbGVtZW50c0J5VGFnTmFtZSgndXNlJylbMF0uZ2V0QXR0cmlidXRlKCd4bGluazpocmVmJykuc2xpY2UoMSk7DQogICAgICAgICAgICBvYmpbIm0iICsgaWRdLnRvZ3R5cGUgPSB0b2c7DQogICAgICAgIH0NCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjaGlsZHMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBjaWQgPSBjaGlsZHNbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5jaGlsZCk7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKGNhbGxzLmxlbmd0aCAhPT0gMCkgew0KICAgICAgICBvYmpbIm0iICsgaWRdLmNhbGwgPSB7fTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjYWxscy5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9IGNhbGxzW2ldLmlkOw0KICAgICAgICAgICAgaW5pdChjaWQsIG9ialsibSIgKyBpZF0uY2FsbCk7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKGJvdW5kYXJ5Lmxlbmd0aCAhPT0gMCkgew0KICAgICAgICBvYmpbIm0iICsgaWRdLmJvdW5kYXJ5ID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgYm91bmRhcnkubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBjaWQgPSBib3VuZGFyeVtpXS5pZDsNCiAgICAgICAgICAgIGluaXQoY2lkLCBvYmpbIm0iICsgaWRdLmJvdW5kYXJ5KTsNCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoc3VtbWFyeS5sZW5ndGggIT09IDApIHsNCiAgICAgICAgb2JqWyJtIiArIGlkXS5zdW1tYXJ5ID0ge307DQogICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgc3VtbWFyeS5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgdmFyIGNpZCA9IHN1bW1hcnlbaV0uaWQ7DQogICAgICAgICAgICBpbml0KGNpZCwgb2JqWyJtIiArIGlkXS5zdW1tYXJ5KTsNCiAgICAgICAgfQ0KICAgIH0NCn0NCi8vLS1pbml0aWFsaXplDQovL3RvZ2dsZWRpc3BsYXktLQ0KdmFyIGNoYWluQXJyID0gW107DQpmdW5jdGlvbiBnZXRjaGFpbihpZCkgew0KICAgIGNoYWluQXJyLnVuc2hpZnQoJ20nICsgaWQpOw0KICAgIHZhciBwYXJlbnQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuZ2V0QXR0cmlidXRlKCdlZDpwYXJlbnRpZCcpOw0KICAgIGlmICghcGFyZW50KSB7DQogICAgICAgIHJldHVybjsNCiAgICB9DQogICAgaWYgKHBhcmVudC5tYXRjaCgvXCwvKSkgew0KICAgICAgICBwYXJlbnQgPSBwYXJlbnQubWF0Y2goL1xkKyg/PVwsKS8pWzBdDQogICAgfQ0KICAgIGdldGNoYWluKHBhcmVudCk7DQp9DQpmdW5jdGlvbiBnZXRvYmooaWQpIHsNCiAgICBjaGFpbkFyciA9IFtdOw0KICAgIGdldGNoYWluKGlkKTsNCiAgICB2YXIgbWFpbiA9IGNoYWluQXJyWzBdOw0KICAgIGlmIChjaGFpbkFyci5sZW5ndGggPiAxKSB7DQogICAgICAgIHZhciBvYmogPSBkYXRhVHJlZVttYWluXTsNCiAgICAgICAgLy8gY29uc29sZS5sb2coY2hhaW5BcnIpOw0KICAgICAgICBmb3IgKHZhciBpID0gMTsgaSA8IGNoYWluQXJyLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICB2YXIgYSA9IGNoYWluQXJyW2ldOw0KICAgICAgICAgICAgZm9yICh2YXIgaiA9IDA7IGogPCBPYmplY3Qua2V5cyhvYmopLmxlbmd0aDsgaisrKSB7DQogICAgICAgICAgICAgICAgdmFyIGNvYmogPSBvYmpbT2JqZWN0LmtleXMob2JqKVtqXV1bYV07DQogICAgICAgICAgICAgICAgaWYgKGNvYmopIHsNCiAgICAgICAgICAgICAgICAgICAgb2JqID0gY29iajsNCiAgICAgICAgICAgICAgICAgICAgY29udGludWUNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgIH0NCiAgICAgICAgcmV0dXJuIG9iag0KICAgIH0gZWxzZSB7DQogICAgICAgIHZhciBvYmogPSBkYXRhVHJlZVttYWluXTsNCiAgICAgICAgcmV0dXJuIG9iag0KICAgIH0NCg0KfQ0KZm9yICh2YXIgaSA9IDA7IGkgPCBzaGFwZS5sZW5ndGg7IGkrKykgew0KICAgIHNoYXBlW2ldLm9uY2xpY2sgPSBmdW5jdGlvbiAoKSB7DQogICAgICAgIHZhciBpZCA9IE51bWJlcih0aGlzLmdldEF0dHJpYnV0ZSgnZWQ6dG9ndG9waWNpZCcpKTsNCiAgICAgICAgdmFyIG9iaiA9IGdldG9iaihpZCk7DQoNCiAgICAgICAgdmFyIHR5cGUgPSBvYmoudG9ndHlwZSA9PT0gJ21pbnVzJyA/ICdwbHVzJyA6ICdtaW51cyc7DQogICAgICAgIHZhciBkaXNwbGF5ID0gb2JqLnRvZ3R5cGUgPT09ICdtaW51cycgPyAnbm9uZScgOiAnYmxvY2snOw0KICAgICAgICB0aGlzLmdldEVsZW1lbnRzQnlUYWdOYW1lKCd1c2UnKVswXS5zZXRBdHRyaWJ1dGUoJ3hsaW5rOmhyZWYnLCAnIycgKyB0eXBlKTsNCiAgICAgICAgb2JqLnRvZ3R5cGUgPSB0eXBlOw0KICAgICAgICBjaGVja0lEID0gb2JqOw0KDQogICAgICAgIHV0ZChvYmosIGlkLCBkaXNwbGF5KTsNCiAgICAgICAgZXh0cmFSZWxhRmluKCk7DQogICAgfQ0KfQ0KZnVuY3Rpb24gdXRkKG9iaiwgaWQsIHNob3csIG9jKSB7DQoNCiAgICB2YXIgcHNob3cgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnID8gJ2Jsb2NrJyA6ICdub25lJzsNCiAgICBpZiAob2JqLnJlbGFmcm9tKSB7DQogICAgICAgIGlmIChvYmoucmVsYWZyb20uZGlzcGxheSAhPT0gcHNob3cpIHsNCiAgICAgICAgICAgIHZhciByZWxhZnJvbXMgPSBPYmplY3Qua2V5cyhvYmoucmVsYWZyb20pOw0KICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLCAxKTsNCiAgICAgICAgICAgIGZvciAodmFyIGsgPSAwOyBrIDwgcmVsYWZyb21zLmxlbmd0aDsgaysrKSB7DQogICAgICAgICAgICAgICAgdmFyIGQgPSByZWxhZnJvbXNba107DQogICAgICAgICAgICAgICAgZXh0cmFSZWxhW2RdLmlzQyA9IHRydWU7DQogICAgICAgICAgICB9DQogICAgICAgICAgICBvYmoucmVsYWZyb20uZGlzcGxheSA9IHBzaG93Ow0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChvYmoucmVsYXRvKSB7DQogICAgICAgIGlmIChvYmoucmVsYXRvLmRpc3BsYXkgIT09IHBzaG93KSB7DQogICAgICAgICAgICB2YXIgcmVsYXRvcyA9IE9iamVjdC5rZXlzKG9iai5yZWxhdG8pOw0KICAgICAgICAgICAgcmVsYXRvcy5zcGxpY2UocmVsYXRvcy5pbmRleE9mKCdkaXNwbGF5JyksIDEpOw0KICAgICAgICAgICAgZm9yICh2YXIgayA9IDA7IGsgPCByZWxhdG9zLmxlbmd0aDsgaysrKSB7DQogICAgICAgICAgICAgICAgdmFyIGQgPSByZWxhdG9zW2tdOw0KICAgICAgICAgICAgICAgIGV4dHJhUmVsYVtkXS5pc0MgPSB0cnVlOw0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgb2JqLnJlbGF0by5kaXNwbGF5ID0gcHNob3c7DQogICAgICAgIH0NCiAgICB9DQogICAgaWYgKG9iai5jYWxsKSB7DQogICAgICAgIHZhciBjYWxscyA9IE9iamVjdC5rZXlzKG9iai5jYWxsKTsNCiAgICAgICAgaWYgKGNoZWNrSUQgIT09IG9iaikgew0KICAgICAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjYWxscy5sZW5ndGg7IGkrKykgew0KICAgICAgICAgICAgICAgIHZhciBhID0gY2FsbHNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGIgPSBvYmouY2FsbFtjYWxsc1tpXV07DQogICAgICAgICAgICAgICAgdmFyIGMgPSBiLnRvZ3R5cGU7DQogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYSkuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICAgICAgaWYgKGIucmVsYWZyb20gJiYgIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgaWYgKGIucmVsYWZyb20uZGlzcGxheSAhPT0gc2hvdykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcyA9IE9iamVjdC5rZXlzKGIucmVsYWZyb20pOw0KICAgICAgICAgICAgICAgICAgICAgICAgcmVsYWZyb21zLnNwbGljZShyZWxhZnJvbXMuaW5kZXhPZignZGlzcGxheScpLCAxKTsNCiAgICAgICAgICAgICAgICAgICAgICAgIGZvciAodmFyIGsgPSAwOyBrIDwgcmVsYWZyb21zLmxlbmd0aDsgaysrKSB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQgPSByZWxhZnJvbXNba107DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgZXh0cmFSZWxhW2RdLmlzQyA9IHRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGF0byAmJiAhYykgew0KICAgICAgICAgICAgICAgICAgICBpZiAoYi5yZWxhdG8uZGlzcGxheSAhPT0gc2hvdykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGF0b3MgPSBPYmplY3Qua2V5cyhiLnJlbGF0byk7DQogICAgICAgICAgICAgICAgICAgICAgICByZWxhdG9zLnNwbGljZShyZWxhdG9zLmluZGV4T2YoJ2Rpc3BsYXknKSwgMSk7DQogICAgICAgICAgICAgICAgICAgICAgICBmb3IgKHZhciBrID0gMDsgayA8IHJlbGF0b3MubGVuZ3RoOyBrKyspIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YXIgZCA9IHJlbGF0b3Nba107DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgZXh0cmFSZWxhW2RdLmlzQyA9IHRydWU7DQogICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICBiLnJlbGF0by5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZiAoYykgew0KICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIiArIGEgKyAiJ10iKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAgICAgaWYgKGMgPT09ICdtaW51cycpIHsNCiAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLCBhLCBzaG93KQ0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgIGlmICgoYi5jYWxsIHx8IGIuYm91bmRhcnkgfHwgYi5zdW1tYXJ5KSAmJiBjID09PSAncGx1cycpIHsNCiAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLCBhLCBzaG93LCB0cnVlKQ0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLmNhbGwgJiYgIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsIGEsIHNob3csIHRydWUpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLnN1bW1hcnkgJiYgIWMpIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsIGEsIHNob3cpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChiLmJvdW5kYXJ5ICYmICFjKSB7DQogICAgICAgICAgICAgICAgICAgIHV0ZChiLCBhLCBzaG93KQ0KICAgICAgICAgICAgICAgIH0NCg0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChvYmouc3VtbWFyeSkgew0KICAgICAgICB2YXIgc3VtbWFyeXMgPSBPYmplY3Qua2V5cyhvYmouc3VtbWFyeSk7DQogICAgICAgIGlmICgoY2hlY2tJRCAhPT0gb2JqICYmIChvYmoudG9ndHlwZSA9PT0gJ21pbnVzJyB8fCAhb2JqLnRvZ3R5cGUpKSB8fCBjaGVja0lEID09PSBvYmopIHsNCiAgICAgICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgc3VtbWFyeXMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgICAgICB2YXIgYSA9IHN1bW1hcnlzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgICAgIHZhciBvc3AgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChhKS5nZXRBdHRyaWJ1dGUoJ2VkOnBhcmVudGlkJyk7DQogICAgICAgICAgICAgICAgaWYgKG9zcC5tYXRjaCgvXCwvKSkgew0KICAgICAgICAgICAgICAgICAgICB2YXIgb3NwYSA9IG9zcC5zcGxpdCgnLCcpOw0KICAgICAgICAgICAgICAgICAgICB2YXIgb3NwTCA9IDA7DQoNCiAgICAgICAgICAgICAgICAgICAgZm9yICh2YXIgaiA9IDA7IGogPCBvc3BhLmxlbmd0aDsgaisrKSB7DQogICAgICAgICAgICAgICAgICAgICAgICBpZiAoc2hvdyA9PSAnbm9uZScpIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZiAoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQob3NwYVtqXSkuc3R5bGUuZGlzcGxheSAhPSAnbm9uZScpIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgfSBlbHNlIHsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgb3NwTCsrOw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXkgIT0gJ25vbmUnKSB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0gZWxzZSB7DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9zcEwrKzsNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgICAgICAgICB9DQoNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBpZiAob3NwTCAhPT0gb3NwYS5sZW5ndGgpIHsNCiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRpbnVlOw0KICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIHZhciBiID0gb2JqLnN1bW1hcnlbc3VtbWFyeXNbaV1dOw0KICAgICAgICAgICAgICAgIC8vIGNvbnNvbGUubG9nKGEpOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGEpLnN0eWxlLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgIGlmKGMpew0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIithKyInXSIpLnN0eWxlLmRpc3BsYXk9c2hvdzsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgaWYoYz09PSdtaW51cycpew0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdykNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICBpZiAoYi5jYWxsJiZjPT09J3BsdXMnKSB7DQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgaWYoYi5jYWxsJiYhYykgew0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICB1dGQoYixzaG93LHRydWUpDQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGlmIChPYmplY3Qua2V5cyhiKS5sZW5ndGggIT09IDApIHsNCiAgICAgICAgICAgICAgICAgICAgdXRkKGIsIGEsIHNob3cpDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KICAgIGlmIChvYmouYm91bmRhcnkpIHsNCiAgICAgICAgdmFyIGJvdW5kYXJ5cyA9IE9iamVjdC5rZXlzKG9iai5ib3VuZGFyeSk7DQogICAgICAgIGlmIChjaGVja0lEICE9PSBvYmopIHsNCiAgICAgICAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgYm91bmRhcnlzLmxlbmd0aDsgaSsrKSB7DQogICAgICAgICAgICAgICAgdmFyIGEgPSBib3VuZGFyeXNbaV0uc2xpY2UoMSk7DQogICAgICAgICAgICAgICAgdmFyIGIgPSBvYmouYm91bmRhcnlbYm91bmRhcnlzW2ldXTsNCiAgICAgICAgICAgICAgICAvLyBjb25zb2xlLmxvZyhhKTsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChhKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICBpZihjKXsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcigiZ1tlZFxcOnRvZ3RvcGljaWQ9JyIrYSsiJ10iKS5zdHlsZS5kaXNwbGF5PXNob3c7DQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgICAgIGlmKGM9PT0nbWludXMnKXsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgICAgIHV0ZChiLHNob3cpDQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgaWYgKGIuY2FsbCYmYz09PSdwbHVzJykgew0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdyx0cnVlKQ0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgLy8gICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgIGlmKGIuY2FsbCYmIWMpIHsNCiAgICAgICAgICAgICAgICAvLyAgICAgICAgICAgICAgICAgICAgdXRkKGIsc2hvdyx0cnVlKQ0KICAgICAgICAgICAgICAgIC8vICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBpZiAoT2JqZWN0LmtleXMoYikubGVuZ3RoICE9PSAwKSB7DQogICAgICAgICAgICAgICAgICAgIHV0ZChiLCBhLCBzaG93KQ0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgfQ0KICAgIH0NCiAgICBpZiAoIW9jICYmIG9iai5jaGlsZCkgew0KICAgICAgICB2YXIgY2hpbGRzID0gT2JqZWN0LmtleXMob2JqLmNoaWxkKTsNCiAgICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCBjaGlsZHMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgICAgIHZhciBhID0gY2hpbGRzW2ldLnNsaWNlKDEpOw0KICAgICAgICAgICAgdmFyIGIgPSBvYmouY2hpbGRbY2hpbGRzW2ldXTsNCiAgICAgICAgICAgIHZhciBjID0gYi50b2d0eXBlOw0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYSkuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICB2YXIgdFNQYXRoID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcigicGF0aFtlZFxcOnRvc3VwZXJpZD0nIiArIGEgKyAiJ10iKTsNCiAgICAgICAgICAgIGlmICh0U1BhdGgpIHsNCiAgICAgICAgICAgICAgICB0U1BhdGguc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICB9DQogICAgICAgICAgICB2YXIgbm90ZVRpcCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoImdbZWRcXDpub3RldG89JyIgKyBhICsgIiddIik7DQogICAgICAgICAgICBpZiAobm90ZVRpcCkgew0KICAgICAgICAgICAgICAgIG5vdGVUaXAuc3R5bGUuZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5yZWxhZnJvbSAmJiAhYykgew0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGFmcm9tLmRpc3BsYXkgIT09IHNob3cpIHsNCiAgICAgICAgICAgICAgICAgICAgdmFyIHJlbGFmcm9tcyA9IE9iamVjdC5rZXlzKGIucmVsYWZyb20pOw0KICAgICAgICAgICAgICAgICAgICByZWxhZnJvbXMuc3BsaWNlKHJlbGFmcm9tcy5pbmRleE9mKCdkaXNwbGF5JyksIDEpOw0KICAgICAgICAgICAgICAgICAgICBmb3IgKHZhciBrID0gMDsgayA8IHJlbGFmcm9tcy5sZW5ndGg7IGsrKykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQgPSByZWxhZnJvbXNba107DQogICAgICAgICAgICAgICAgICAgICAgICBleHRyYVJlbGFbZF0uaXNDID0gdHJ1ZTsNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICBiLnJlbGFmcm9tLmRpc3BsYXkgPSBzaG93Ow0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGlmIChiLnJlbGF0byAmJiAhYykgew0KICAgICAgICAgICAgICAgIGlmIChiLnJlbGF0by5kaXNwbGF5ICE9PSBzaG93KSB7DQogICAgICAgICAgICAgICAgICAgIHZhciByZWxhdG9zID0gT2JqZWN0LmtleXMoYi5yZWxhdG8pOw0KICAgICAgICAgICAgICAgICAgICByZWxhdG9zLnNwbGljZShyZWxhdG9zLmluZGV4T2YoJ2Rpc3BsYXknKSwgMSk7DQogICAgICAgICAgICAgICAgICAgIGZvciAodmFyIGsgPSAwOyBrIDwgcmVsYXRvcy5sZW5ndGg7IGsrKykgew0KICAgICAgICAgICAgICAgICAgICAgICAgdmFyIGQgPSByZWxhdG9zW2tdOw0KICAgICAgICAgICAgICAgICAgICAgICAgZXh0cmFSZWxhW2RdLmlzQyA9IHRydWU7DQogICAgICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICAgICAgYi5yZWxhdG8uZGlzcGxheSA9IHNob3c7DQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgaWYgKGMpIHsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCJnW2VkXFw6dG9ndG9waWNpZD0nIiArIGEgKyAiJ10iKS5zdHlsZS5kaXNwbGF5ID0gc2hvdzsNCiAgICAgICAgICAgICAgICBpZiAoYyA9PT0gJ21pbnVzJykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYiwgYSwgc2hvdykNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgaWYgKChiLmNhbGwgfHwgYi5ib3VuZGFyeSB8fCBiLnN1bW1hcnkpICYmIGMgPT09ICdwbHVzJykgew0KICAgICAgICAgICAgICAgICAgICB1dGQoYiwgYSwgc2hvdywgdHJ1ZSkNCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5jYWxsICYmICFjKSB7DQogICAgICAgICAgICAgICAgdXRkKGIsIGEsIHNob3csIHRydWUpDQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5zdW1tYXJ5ICYmICFjKSB7DQogICAgICAgICAgICAgICAgdXRkKGIsIGEsIHNob3cpDQogICAgICAgICAgICB9DQogICAgICAgICAgICBpZiAoYi5ib3VuZGFyeSAmJiAhYykgew0KICAgICAgICAgICAgICAgIHV0ZChiLCBhLCBzaG93KQ0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQogICAgfQ0KfQ0KDQpmdW5jdGlvbiBleHRyYVJlbGFGaW4oKSB7DQogICAgdmFyIGV4dHJha2V5cyA9IE9iamVjdC5rZXlzKGV4dHJhUmVsYSk7DQogICAgZm9yICh2YXIgaSA9IDA7IGkgPCBleHRyYWtleXMubGVuZ3RoOyBpKyspIHsNCiAgICAgICAgdmFyIGV4dHJhT2JqID0gZXh0cmFSZWxhW2V4dHJha2V5c1tpXV07DQogICAgICAgIGlmIChleHRyYU9iai5pc0MgPT09IHRydWUpIHsNCiAgICAgICAgICAgIHZhciBmc2hvdyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGV4dHJhT2JqLmZyb21pZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnID8gdHJ1ZSA6IGZhbHNlOw0KICAgICAgICAgICAgdmFyIHRzaG93ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZXh0cmFPYmoudG9pZCkuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnID8gdHJ1ZSA6IGZhbHNlOw0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoZXh0cmFPYmouaWQpLnN0eWxlLmRpc3BsYXkgPSBmc2hvdyAmJiB0c2hvdyA/ICdibG9jaycgOiAnbm9uZSc7DQogICAgICAgICAgICBleHRyYVJlbGFbZXh0cmFrZXlzW2ldXS5pc0MgPSBmYWxzZTsNCiAgICAgICAgfQ0KICAgIH0NCn0='))</script>
+  </body>
+</html>
